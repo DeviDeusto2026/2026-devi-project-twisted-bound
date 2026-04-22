@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(move.action.ReadValue<Vector3>());
         moveDirection = move.action.ReadValue<Vector3>();
         moveDirection = moveDirection.normalized;
     }
