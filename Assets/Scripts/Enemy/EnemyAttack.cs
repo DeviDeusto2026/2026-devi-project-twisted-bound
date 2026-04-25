@@ -4,11 +4,11 @@ public class EnemyAttack : MonoBehaviour
 {
 
     [SerializeField]
-    private int attack;
+    private float attack;
 
 
 
-    public int GetAttack()
+    public float GetAttack()
     {
         return attack;
     }
