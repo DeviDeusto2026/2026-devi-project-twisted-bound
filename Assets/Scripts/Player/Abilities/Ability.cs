@@ -6,13 +6,13 @@ public abstract class Ability : MonoBehaviour
     private float cooldown;
     private bool inCooldown = true;
 
-    void TryActivate()
+    public void TryActivate()
     {
         if (!inCooldown) return;
 
         Activate();
         inCooldown = true;
-        Invoke("Abilitate", GetCooldown());
+        Invoke(nameof(Abilitate), GetCooldown());
     }
 
     public abstract void Activate();
