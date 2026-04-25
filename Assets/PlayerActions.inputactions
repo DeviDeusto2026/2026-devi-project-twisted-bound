@@ -19,7 +19,7 @@
                     "name": "Point",
                     "type": "PassThrough",
                     "id": "ab7b37dd-45e6-47ed-a6d4-03fc97d49921",
-                    "expectedControlType": "Vector3",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
