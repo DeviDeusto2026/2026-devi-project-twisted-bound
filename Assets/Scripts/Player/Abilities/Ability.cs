@@ -5,7 +5,7 @@ public abstract class Ability : MonoBehaviour
 {
     private float cooldown;
     private bool inCooldown = true;
-    [SerializeField] private GameObject player;
+    [SerializeField] protected GameObject player;
 
     public void TryActivate()
     {
