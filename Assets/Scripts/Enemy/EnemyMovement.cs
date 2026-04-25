@@ -55,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
         if (this.transform.forward == targetDirection) return;
 
         float angle = Vector3.SignedAngle(this.transform.forward, targetDirection, Vector3.up);
-        diseredAngle = Mathf.Abs(angle);
+        diseredAngle = angle;
         float maxAngle = Time.fixedDeltaTime * rotationSpeed;
 
         if (Mathf.Abs(angle) > maxAngle)
@@ -68,7 +68,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Move()
     {
-        float speedModifier = 1 / ((diseredAngle / 36) + 1);
+        float speedModifier = 1 / ((Mathf.Abs(diseredAngle) / 36) + 1);
         rb.linearVelocity = this.transform.forward * moveSpeed * speedModifier;
         
     }
