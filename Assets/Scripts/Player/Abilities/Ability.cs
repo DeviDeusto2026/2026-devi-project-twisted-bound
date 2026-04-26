@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
+    protected string abilityName;
+    protected int level;
     private float cooldown;
     private bool inCooldown = true;
     [SerializeField] protected GameObject player;
