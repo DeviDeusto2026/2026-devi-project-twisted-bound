@@ -9,7 +9,7 @@ public abstract class Ability : MonoBehaviour
 
     public void TryActivate()
     {
-        if (!inCooldown) return;
+        if (inCooldown) return;
 
         Activate();
         inCooldown = true;
