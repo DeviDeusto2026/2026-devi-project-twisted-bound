@@ -7,7 +7,8 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
 
-    public float moveSpeed;
+    private EnemyStats enemyStats;
+
     public float rotationSpeed;
     
     private Rigidbody rb;
@@ -20,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         this.rb = this.GetComponent<Rigidbody>();
+        enemyStats = this.gameObject.GetComponent<EnemyStats>();
     }
 
     // Update is called once per frame
@@ -69,7 +71,7 @@ public class EnemyMovement : MonoBehaviour
     private void Move()
     {
         float speedModifier = 1 / ((Mathf.Abs(diseredAngle) / 36) + 1);
-        rb.linearVelocity = this.transform.forward * moveSpeed * speedModifier;
+        rb.linearVelocity = this.transform.forward * enemyStats.GetVelocity() * speedModifier;
         
     }
 }
