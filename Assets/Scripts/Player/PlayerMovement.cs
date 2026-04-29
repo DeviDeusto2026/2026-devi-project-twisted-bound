@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
     private Rigidbody rigidBody;
     private Vector3 moveDirection;
 
-    [SerializeField] private float speed;    
+    [SerializeField] private float velocity;    
     [SerializeField] private InputActionReference move;
 
     private void Start()
@@ -23,6 +23,6 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidBody.linearVelocity = new Vector3(moveDirection.x * speed, 0, moveDirection.z * speed);
+        rigidBody.linearVelocity = new Vector3(moveDirection.x * velocity, 0, moveDirection.z * velocity);
     }
 }
