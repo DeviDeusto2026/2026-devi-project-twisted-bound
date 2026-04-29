@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
+    public const int maxLevel = 7;
+
     protected string abilityName;
     protected int level;
     protected float cooldown;
@@ -29,9 +31,21 @@ public abstract class Ability : MonoBehaviour
         return cooldown;
     }
 
-    public float GetLevel()
+    public int GetLevel()
     {
         return level;
+    }
+
+    public void SetLevel(int level)
+    {
+        if (level < 0 && level > maxLevel) return;
+
+        this.level = level;
+    }
+    
+    public void LevelUp()
+    {
+        this.level = this.GetLevel() + 1;
     }
 
     public void SetPlayer(GameObject player)

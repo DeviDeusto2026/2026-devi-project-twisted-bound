@@ -9,13 +9,22 @@ public class AbilityManager : MonoBehaviour
 
     private void Start()
     {
-        abilityList[0].SetPlayer(player);
+        InitiateAbilities();
     }
 
     void Update()
     {
         ActivateAbilities();
     }
+
+    void InitiateAbilities()
+    {
+        foreach(Ability ability in abilityList){
+            ability.SetPlayer(player);
+            ability.SetLevel(0);
+        }
+    }
+
     void ActivateAbilities()
     {
         foreach(Ability ability in abilityList)
@@ -24,6 +33,17 @@ public class AbilityManager : MonoBehaviour
 
             ability.TryActivate();
 
+        }
+    }
+    public void LevelUpAbility(string abilityName)
+    {
+        foreach (Ability ability in abilityList)
+        {
+            if (ability.name.Equals(abilityName))
+            {
+                ability.LevelUp();
+                break;
+            }
         }
     }
 }
