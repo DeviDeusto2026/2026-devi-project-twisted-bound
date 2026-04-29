@@ -1,7 +1,7 @@
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class Experience : MonoBehaviour
+public class ExperienceBar : MonoBehaviour
 {
     private float experience = 0;
     private float level = 1;
