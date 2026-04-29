@@ -11,9 +11,9 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        AbilityAttack abilityAttack = collision.gameObject.GetComponent<AbilityAttack>(); 
+        AbilityAttack abilityAttack = collider.gameObject.GetComponent<AbilityAttack>(); 
 
         if (abilityAttack == null) return;
 
