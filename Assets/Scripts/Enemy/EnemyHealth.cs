@@ -3,8 +3,12 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    [SerializeField]
-    private float health;
+    private EnemyStats enemyStats;
+
+    private void Start()
+    {
+        enemyStats = this.gameObject.GetComponent<EnemyStats>();
+    }
 
 
     private void OnCollisionEnter(Collision collision)
@@ -19,9 +23,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void SufferAttack(float attack)
     {
-        health -= attack;
+        enemyStats.health -= attack;
 
-        if (health <= 0)
+        if (enemyStats.health <= 0)
         {
             Die();
         }
