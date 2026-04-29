@@ -27,7 +27,6 @@ public class ExperienceRecolector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ExperienceOrb experienceOrb = other.gameObject.GetComponent<ExperienceOrb>();
-        Debug.Log("Orbe recogido Trigger");
         if (experienceOrb == null) return;
 
 
@@ -35,14 +34,4 @@ public class ExperienceRecolector : MonoBehaviour
         Destroy(other.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        ExperienceOrb experienceOrb = collision.gameObject.GetComponent<ExperienceOrb>();
-        Debug.Log("Orbe recogido Collision");
-        if (experienceOrb == null) return;
-
-
-        experienceBar.AddExperience(experienceOrb.GetExperience());
-        Destroy(collision.gameObject);
-    }
 }
