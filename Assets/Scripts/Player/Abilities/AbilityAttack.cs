@@ -8,4 +8,9 @@ public class AbilityAttack : MonoBehaviour
     {
         return attack;
     }
+
+    public void SetAttack(float attack)
+    {
+        this.attack = attack;
+    }
 }

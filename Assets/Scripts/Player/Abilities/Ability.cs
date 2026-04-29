@@ -5,8 +5,8 @@ public abstract class Ability : MonoBehaviour
 {
     protected string abilityName;
     protected int level;
-    private float cooldown;
-    private bool inCooldown = true;
+    protected float cooldown;
+    protected bool inCooldown = false;
     [SerializeField] protected GameObject player;
 
     public void TryActivate()
@@ -27,5 +27,15 @@ public abstract class Ability : MonoBehaviour
     float GetCooldown()
     {
         return cooldown;
+    }
+
+    public float GetLevel()
+    {
+        return level;
+    }
+
+    public void SetPlayer(GameObject player)
+    {
+        this.player = player;
     }
 }

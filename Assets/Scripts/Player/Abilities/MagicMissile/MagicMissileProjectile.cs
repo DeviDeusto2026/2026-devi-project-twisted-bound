@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileMagicMissile : MonoBehaviour
+public class MagicMissileProjectile : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {

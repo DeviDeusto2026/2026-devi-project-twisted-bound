@@ -1,10 +1,16 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class MagicMissile : Ability
+public class MagicMissileAbility : Ability
 {
     [SerializeField] private GameObject projectile;
     private float force = 500;
+
+    private void Start()
+    {
+        this.level = 1;
+        this.cooldown = 3;
+    }
 
     public override void Activate()
     {
@@ -15,6 +21,7 @@ public class MagicMissile : Ability
         //Tener en cuenta daño y numero de projectiles
         
         GameObject newProjectile = Instantiate(projectile, position, playerTransform.rotation);
+        newProjectile.GetComponent<AbilityAttack>().SetAttack(1);
         
         newProjectile.GetComponent<Rigidbody>().AddForce(playerTransform.forward * force);
 
@@ -24,7 +31,7 @@ public class MagicMissile : Ability
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            this.Activate();
+            this.TryActivate();
         }
     }
 }

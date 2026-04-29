@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3866446356977747741}
   - component: {fileID: -2730467947310608835}
   - component: {fileID: 7977343936038080030}
+  - component: {fileID: -795369443767837376}
   m_Layer: 0
   m_Name: MagicMissile
   m_TagString: Untagged
@@ -153,3 +154,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba75a91bb215414b8da05dca74dbe94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileMagicMissile
+--- !u!114 &-795369443767837376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521572451672629132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc8737e436c5de478ac128181c14c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityAttack
+  attack: 0
