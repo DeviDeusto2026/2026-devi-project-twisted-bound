@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
     [SerializeField] private List<Ability> abilityList = new List<Ability>();
 
     private void Start()
     {
+        player = this.gameObject;
         InitiateAbilities();
     }
 

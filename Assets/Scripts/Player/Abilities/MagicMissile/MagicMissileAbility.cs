@@ -8,6 +8,7 @@ public class MagicMissileAbility : Ability
 
     private void Start()
     {
+        player = this.gameObject;
         this.level = 1;
         this.cooldown = 3;
     }

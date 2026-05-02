@@ -4,7 +4,7 @@ using static UnityEngine.UI.Image;
 
 public class ExperienceRecolector : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
     
     private ExperienceBar experienceBar;
     private PlayerStats playerStats;
@@ -13,6 +13,7 @@ public class ExperienceRecolector : MonoBehaviour
     {
         experienceBar = FindAnyObjectByType<ExperienceBar>();
         playerStats = player.GetComponent<PlayerStats>();
+        player = this.gameObject;
     }
     private void Update()
     { 
