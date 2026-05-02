@@ -12,6 +12,13 @@ public class PlayerStats : MonoBehaviour
     private float pickupAreaSize = 10;
     //Añadir gestor de objetos como atributo.
 
+    private EffectManager effectManager;
+
+    private void Start()
+    {
+        effectManager = this.gameObject.GetComponent<EffectManager>();
+    }
+
     public float GetHealthMax()
     {
         return healthMax;
@@ -23,22 +30,50 @@ public class PlayerStats : MonoBehaviour
     }
     public float GetResistance()
     {
-        return resistance;
+        return resistance * (1 + effectManager.GetPowerOf(Effect.StatEffect.RESISTANCE));
     }
 
     public float GetVelocity()
     {
-        return velocity;
+        return velocity * (1 + effectManager.GetPowerOf(Effect.StatEffect.VELOCITY));
     }
 
     public float GetHealthRegeneration()
     {
-        return healthRegeneration;
+        return healthRegeneration + effectManager.GetPowerOf(Effect.StatEffect.HEALTH_REGENERATION);
     }
 
     public float GetPickupArea()
     {
-        return pickupAreaSize;
+        return pickupAreaSize * (1 + effectManager.GetPowerOf(Effect.StatEffect.PICKUP_AREA));
+    }
+
+
+    public float GetAreaOfEffect()
+    {
+        return 1 + effectManager.GetPowerOf(Effect.StatEffect.AREA_OF_EFFECT);
+    }
+
+
+    public float GetEffectDuration()
+    {
+        return 1 + effectManager.GetPowerOf(Effect.StatEffect.EFFECT_DURATION);
+    }
+
+    public float GetCooldownReduction()
+    {
+        return 1 + effectManager.GetPowerOf(Effect.StatEffect.COOLDOWN_REDUCTION);
+    }
+
+    public int GetNumberOfProyectiles()
+    {
+        return (int) effectManager.GetPowerOf(Effect.StatEffect.NUMBER_OF_PROYECTILES);
+    }
+
+
+    public float GetAttack()
+    {
+        return 1 + effectManager.GetPowerOf(Effect.StatEffect.ATTACK);
     }
 
     private void OnCollisionEnter(Collision collision)
