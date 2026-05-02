@@ -31,13 +31,13 @@ public class EffectManager : MonoBehaviour
     }
 
 
-    public float GetPowerOf(Effect.StatEffect statEffect)
+    public float GetPowerOf(Stat stat)
     {
         float result = 0;
         
         foreach (Effect effect in effectList)
         {
-            if (effect.statEffect != statEffect) continue;
+            if (effect.stat != stat) continue;
 
             result += effect.power;
         }

@@ -3,33 +3,20 @@ using UnityEngine;
 
 public class Effect
 {
-    public readonly StatEffect statEffect;
+    public readonly Stat stat;
     public readonly float power;
     public float duration;
 
-
-    public enum StatEffect
+    public Effect(Stat statEffect, float power, float duration)
     {
-        [Tooltip("Multiplier to the velocity stat")]
-        VELOCITY,
-
-        [Tooltip("Multiplier to the resistance stat")]
-        RESISTANCE,
-
-        [Tooltip("Multiplier to the attack stat")]
-        ATTACK
-    }
-
-    public Effect(StatEffect statEffect, float power, float duration)
-    {
-        this.statEffect = statEffect;
+        this.stat = statEffect;
         this.power = power;
         this.duration = duration;
     }
 
     private Effect(Effect effect)
     {
-        this.statEffect = effect.statEffect;
+        this.stat = effect.stat;
         this.power = effect.power;
         this.duration = effect.duration;
     }
