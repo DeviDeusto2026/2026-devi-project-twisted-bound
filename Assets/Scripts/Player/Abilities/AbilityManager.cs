@@ -47,4 +47,9 @@ public class AbilityManager : MonoBehaviour
             }
         }
     }
+
+    public List<Ability> GetAbilityList()
+    {
+        return this.abilityList;
+    }
 }

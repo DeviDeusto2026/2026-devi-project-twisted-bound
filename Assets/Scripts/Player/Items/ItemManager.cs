@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     private GameObject player;
-    [SerializeField] private List<Item> objectList = new List<Item>();
+    [SerializeField] private List<Item> itemList = new List<Item>();
 
     void Start()
     {
@@ -13,7 +13,7 @@ public class ItemManager : MonoBehaviour
 
     void InitiateObjects()
     {
-        foreach(Item item in objectList)
+        foreach(Item item in itemList)
         {
             item.SetLevel(0);
         }
@@ -21,7 +21,7 @@ public class ItemManager : MonoBehaviour
 
     public void LevelUpObject(string itemName)
     {
-        foreach (Item item in objectList)
+        foreach (Item item in itemList)
         {
             if (item.GetName().Equals(itemName))
             {
@@ -33,7 +33,7 @@ public class ItemManager : MonoBehaviour
 
     public float GetStat(Effect.StatEffect stat)
     {
-        foreach (Item item in objectList)
+        foreach (Item item in itemList)
         {
             if (item.GetStat().Equals(stat))
             {
@@ -42,6 +42,11 @@ public class ItemManager : MonoBehaviour
         }
 
         return 0;
+    }
+
+    public List<Item> GetItemList()
+    {
+        return this.itemList;
     }
 
 }

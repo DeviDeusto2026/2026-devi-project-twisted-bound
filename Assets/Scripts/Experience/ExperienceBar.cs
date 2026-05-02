@@ -39,6 +39,4 @@ public class ExperienceBar : MonoBehaviour
 
         //Enseñar habilidades y que escogan una. Devolver nombre
     }
-
-
 }
