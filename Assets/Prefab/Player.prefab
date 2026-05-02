@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2266780378263001179}
   - component: {fileID: 9012656595149889418}
   - component: {fileID: 5093101666240754582}
+  - component: {fileID: 5649347314310649160}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -212,9 +213,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8320f405ff156a43813d6f3066cb0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityManager
-  player: {fileID: 0}
   abilityList:
   - {fileID: 6293169708329918038, guid: ac61355a6682373468497de3566cb0cd, type: 3}
+--- !u!114 &5649347314310649160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35652285371585793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872906f8f6f126740ba4b1fc4570e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemManager
+  objectList: []
 --- !u!1 &2520860702101394103
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,4 +467,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a915b355148e6c44bfb3ad3520fd207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExperienceRecolector
-  player: {fileID: 0}
