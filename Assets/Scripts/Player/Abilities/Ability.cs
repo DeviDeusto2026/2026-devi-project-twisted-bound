@@ -1,7 +1,7 @@
 using System.Dynamic;
 using UnityEngine;
 
-public abstract class Ability : MonoBehaviour
+public abstract class Ability : MonoBehaviour, IReward
 {
     public const int maxLevel = 7;
 
