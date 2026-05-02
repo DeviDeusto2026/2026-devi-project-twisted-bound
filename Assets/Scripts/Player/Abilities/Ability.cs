@@ -52,4 +52,9 @@ public abstract class Ability : MonoBehaviour
     {
         this.player = player;
     }
+
+    public string GetName()
+    {
+        return this.abilityName;
+    }
 }

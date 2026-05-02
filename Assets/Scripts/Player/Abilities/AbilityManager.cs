@@ -40,7 +40,7 @@ public class AbilityManager : MonoBehaviour
     {
         foreach (Ability ability in abilityList)
         {
-            if (ability.name.Equals(abilityName))
+            if (ability.GetName().Equals(abilityName))
             {
                 ability.LevelUp();
                 break;
