@@ -6,25 +6,38 @@ using UnityEngine.UI;
 
 public class RewardSelector : MonoBehaviour
 {
-    bool rewardChoosen = false;
+    public bool rewardChoosen = false;
     [SerializeField] List<Button> buttonList;
-    List<IReward> rewardList;
+    public List<IReward> rewardList;
 
-    private void Start()
+    public void ShowRewards()
     {
         for(int i = 0; i<buttonList.Count; i++)
         {
             TextMeshPro textMeshPro = buttonList[i].GetComponentInChildren<TextMeshPro>();
             string rewardName = rewardList[i].GetName();
 
-            textMeshPro.SetText(rewardName);
+            //textMeshPro.SetText(rewardName); //Esto se a comentado porque como algunas habilidades no tienen nombres da error al hacer pruebas
         }
     }
 
     public void ChooseReward(int option)
     {
+        if (rewardChoosen) return;
+        
         IReward reward = rewardList[option];
         reward.LevelUp();
         rewardChoosen = true;
+
+        ColorBlock buttonColor = ColorBlock.defaultColorBlock;
+        buttonColor.disabledColor = Color.green;
+        buttonList[option].colors = buttonColor;
+
+        foreach (Button button in buttonList)
+        {
+            button.interactable = false;
+        }
+
+
     }
 }

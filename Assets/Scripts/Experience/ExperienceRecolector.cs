@@ -4,16 +4,14 @@ using static UnityEngine.UI.Image;
 
 public class ExperienceRecolector : MonoBehaviour
 {
-    private GameObject player;
     
     private ExperienceBar experienceBar;
     private PlayerStats playerStats;
 
     private void Start()
-    {
+    {   
         experienceBar = FindAnyObjectByType<ExperienceBar>();
-        playerStats = player.GetComponent<PlayerStats>();
-        player = this.gameObject;
+        playerStats = this.gameObject.GetComponentInParent<PlayerStats>();
     }
     private void Update()
     { 
