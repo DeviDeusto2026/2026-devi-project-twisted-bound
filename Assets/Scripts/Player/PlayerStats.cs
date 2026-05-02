@@ -30,50 +30,50 @@ public class PlayerStats : MonoBehaviour
     }
     public float GetResistance()
     {
-        return resistance * (1 + effectManager.GetPowerOf(Effect.StatEffect.RESISTANCE));
+        return resistance * (1 + effectManager.GetPowerOf(Stat.RESISTANCE));
     }
 
     public float GetVelocity()
     {
-        return velocity * (1 + effectManager.GetPowerOf(Effect.StatEffect.VELOCITY));
+        return velocity * (1 + effectManager.GetPowerOf(Stat.VELOCITY));
     }
 
     public float GetHealthRegeneration()
     {
-        return healthRegeneration + effectManager.GetPowerOf(Effect.StatEffect.HEALTH_REGENERATION);
+        return healthRegeneration + effectManager.GetPowerOf(Stat.HEALTH_REGENERATION);
     }
 
     public float GetPickupArea()
     {
-        return pickupAreaSize * (1 + effectManager.GetPowerOf(Effect.StatEffect.PICKUP_AREA));
+        return pickupAreaSize * (1 + effectManager.GetPowerOf(Stat.PICKUP_AREA));
     }
 
 
     public float GetAreaOfEffect()
     {
-        return 1 + effectManager.GetPowerOf(Effect.StatEffect.AREA_OF_EFFECT);
+        return 1 + effectManager.GetPowerOf(Stat.AREA_OF_EFFECT);
     }
 
 
     public float GetEffectDuration()
     {
-        return 1 + effectManager.GetPowerOf(Effect.StatEffect.EFFECT_DURATION);
+        return 1 + effectManager.GetPowerOf(Stat.EFFECT_DURATION);
     }
 
     public float GetCooldownReduction()
     {
-        return 1 + effectManager.GetPowerOf(Effect.StatEffect.COOLDOWN_REDUCTION);
+        return 1 + effectManager.GetPowerOf(Stat.COOLDOWN_REDUCTION);
     }
 
     public int GetNumberOfProyectiles()
     {
-        return (int) effectManager.GetPowerOf(Effect.StatEffect.NUMBER_OF_PROYECTILES);
+        return (int) effectManager.GetPowerOf(Stat.NUMBER_OF_PROYECTILES);
     }
 
 
     public float GetAttack()
     {
-        return 1 + effectManager.GetPowerOf(Effect.StatEffect.ATTACK);
+        return 1 + effectManager.GetPowerOf(Stat.ATTACK);
     }
 
     private void OnCollisionEnter(Collision collision)
