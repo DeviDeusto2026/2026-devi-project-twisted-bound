@@ -9,7 +9,7 @@ public abstract class Ability : MonoBehaviour, IReward
     protected int level;
     protected float cooldown;
     protected bool inCooldown = false;
-    [SerializeField] protected PlayerStats playerStats;
+    protected PlayerStats playerStats;
 
     public void TryActivate()
     {

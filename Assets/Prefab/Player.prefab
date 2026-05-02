@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 9012656595149889418}
   - component: {fileID: 5093101666240754582}
   - component: {fileID: 5649347314310649160}
+  - component: {fileID: 3914714998428173017}
+  - component: {fileID: 554560717505836386}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -227,7 +229,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872906f8f6f126740ba4b1fc4570e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemManager
-  objectList: []
+  itemList: []
+--- !u!114 &3914714998428173017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35652285371585793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e55796b4c11484599464a24316a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectManager
+--- !u!114 &554560717505836386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35652285371585793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ed4904a28dfb140a30407a25f6caa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLevelUpRewards
+  prefabRewardCanvas: {fileID: 8745212629609754135, guid: 1047faf848792a842b4d1aaf746a6bc3, type: 3}
 --- !u!1 &2520860702101394103
 GameObject:
   m_ObjectHideFlags: 0

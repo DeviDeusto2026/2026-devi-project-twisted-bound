@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, IReward
 {
-    string itemName;
-    Stat stat;
-    int level;
-    float power;
+    [SerializeField] string itemName;
+    [SerializeField] Stat stat;
+    [SerializeField] int level;
+    [SerializeField] float power;
 
     
     public Stat GetStat()
