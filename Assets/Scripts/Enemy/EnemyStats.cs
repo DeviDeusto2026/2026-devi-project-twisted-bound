@@ -22,12 +22,12 @@ public class EnemyStats : MonoBehaviour
 
     public float GetAttack()
     {
-        return attack * effectManager.GetPowerOf(Effect.StatEffect.ATTACK);
+        return attack * (1 + effectManager.GetPowerOf(Effect.StatEffect.ATTACK));
     }
 
     public float GetVelocity()
     {
-        return velocity * effectManager.GetPowerOf(Effect.StatEffect.VELOCITY);
+        return velocity * (1 + effectManager.GetPowerOf(Effect.StatEffect.VELOCITY));
     }
 
     public float GetResistanceReduction()
