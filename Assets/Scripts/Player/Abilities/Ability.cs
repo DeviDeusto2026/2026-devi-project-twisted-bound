@@ -9,7 +9,7 @@ public abstract class Ability : MonoBehaviour, IReward
     protected int level;
     protected float cooldown;
     protected bool inCooldown = false;
-    [SerializeField] protected GameObject player;
+    [SerializeField] protected PlayerStats playerStats;
 
     public void TryActivate()
     {
@@ -28,7 +28,7 @@ public abstract class Ability : MonoBehaviour, IReward
 
     float GetCooldown()
     {
-        return cooldown;
+        return cooldown * playerStats.GetCooldownReduction();
     }
 
     public int GetLevel()
@@ -50,7 +50,7 @@ public abstract class Ability : MonoBehaviour, IReward
 
     public void SetPlayer(GameObject player)
     {
-        this.player = player;
+        this.playerStats = player.GetComponent<PlayerStats>();
     }
 
     public string GetName()

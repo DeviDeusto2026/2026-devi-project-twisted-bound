@@ -10,12 +10,12 @@ public class GreatswordAbility : Ability
 
     public float GetDamage()
     {
-        return damage[level - 1];
+        return damage[level - 1] * playerStats.GetAttack();
     }
 
     public int GetNumerOfHits()
     {
-        return numberOfHits[level - 1];
+        return numberOfHits[level - 1] + playerStats.GetNumberOfProyectiles();
     }
 
     public override void Activate()
@@ -35,8 +35,8 @@ public class GreatswordAbility : Ability
         newGreatsword.GetComponent<AbilityAttack>().SetAttack(GetDamage());
         newGreatsword.GetComponent<Greatsword>().lifetime = greatswordLifetime;
         
-        newGreatsword.transform.position = player.transform.position + new Vector3(player.transform.forward.x * newGreatsword.transform.localScale.z / 2, 0, player.transform.forward.x * newGreatsword.transform.localScale.z / 2);
-        newGreatsword.transform.LookAt(player.transform);
+        newGreatsword.transform.position = playerStats.transform.position + new Vector3(playerStats.transform.forward.x * newGreatsword.transform.localScale.z / 2, 0, playerStats.transform.forward.x * newGreatsword.transform.localScale.z / 2);
+        newGreatsword.transform.LookAt(playerStats.transform);
     }
 
 }

@@ -8,14 +8,13 @@ public class MagicMissileAbility : Ability
 
     private void Start()
     {
-        player = this.gameObject;
         this.level = 1;
         this.cooldown = 3;
     }
 
     public override void Activate()
     {
-        Transform playerTransform = this.player.transform;
+        Transform playerTransform = this.playerStats.transform;
         Vector3 position = playerTransform.position;
         position += playerTransform.forward;
 

@@ -63,7 +63,7 @@ public class PlayerStats : MonoBehaviour
 
     public float GetCooldownReduction()
     {
-        return 1 + effectManager.GetPowerOf(Stat.COOLDOWN_REDUCTION) + itemManager.GetStat(Stat.COOLDOWN_REDUCTION);
+        return 1 - (effectManager.GetPowerOf(Stat.COOLDOWN_REDUCTION) + itemManager.GetStat(Stat.COOLDOWN_REDUCTION));
     }
 
     public int GetNumberOfProyectiles()
