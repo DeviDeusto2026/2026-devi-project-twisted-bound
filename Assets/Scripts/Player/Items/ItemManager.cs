@@ -31,7 +31,7 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public float GetStat(Effect.StatEffect stat)
+    public float GetStat(Stat stat)
     {
         foreach (Item item in itemList)
         {

@@ -3,12 +3,12 @@ using UnityEngine;
 public class Item : MonoBehaviour, IReward
 {
     string itemName;
-    Effect.StatEffect stat;
+    Stat stat;
     int level;
     float power;
 
     
-    public Effect.StatEffect GetStat()
+    public Stat GetStat()
     {
         return stat;
     }
