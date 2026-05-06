@@ -552,6 +552,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5285008385135657119}
+  - {fileID: 1461418637354083471}
   m_Father: {fileID: 3966252233482847677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &734097068536142897
@@ -813,6 +814,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3743077816039740815, guid: 1a8458e1481d7b441aa14ec9917e6d1d, type: 3}
   m_PrefabInstance: {fileID: 3361709803824389301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3731993636082987855
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1735095948684786205}
+    m_Modifications:
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.53485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.09749
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019021880418541980, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: m_Name
+      value: DragonClawsAbility
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+--- !u!4 &1461418637354083471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2847036864267720640, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+  m_PrefabInstance: {fileID: 3731993636082987855}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5859833097070684946
 PrefabInstance:
