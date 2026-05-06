@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    private GameObject player;
-    [SerializeField] private List<Ability> abilityList = new List<Ability>();
+    private PlayerStats playerStats;
+    private List<Ability> abilityList = new List<Ability>();
 
     private void Start()
     {
-        player = this.gameObject;
+        playerStats = this.GetComponentInParent<PlayerStats>();
+        this.abilityList.AddRange(this.GetComponentsInChildren<Ability>());
         InitiateAbilities();
     }
 
@@ -21,7 +22,7 @@ public class AbilityManager : MonoBehaviour
     void InitiateAbilities()
     {
         foreach(Ability ability in abilityList){
-            ability.SetPlayer(player);
+            ability.SetPlayer(playerStats);
             ability.SetLevel(0);
         }
     }

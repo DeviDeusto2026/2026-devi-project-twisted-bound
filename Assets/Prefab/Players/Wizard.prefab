@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 6957064873673127088}
   - component: {fileID: 2266780378263001179}
   - component: {fileID: 9012656595149889418}
-  - component: {fileID: 5093101666240754582}
   - component: {fileID: 3914714998428173017}
   - component: {fileID: 554560717505836386}
   m_Layer: 0
@@ -204,20 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53cfb7745b35dd409b18aa6ea09d1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
---- !u!114 &5093101666240754582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35652285371585793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8320f405ff156a43813d6f3066cb0c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityManager
-  abilityList:
-  - {fileID: 6293169708329918038, guid: ac61355a6682373468497de3566cb0cd, type: 3}
 --- !u!114 &3914714998428173017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1735095948684786205}
+  - component: {fileID: 5406789963205952182}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -613,6 +599,18 @@ Transform:
   - {fileID: 5285008385135657119}
   m_Father: {fileID: 3966252233482847677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5406789963205952182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988492578922823785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8320f405ff156a43813d6f3066cb0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityManager
 --- !u!1001 &392154884064277647
 PrefabInstance:
   m_ObjectHideFlags: 0

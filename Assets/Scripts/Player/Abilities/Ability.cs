@@ -48,9 +48,9 @@ public abstract class Ability : MonoBehaviour, IReward
         this.level = this.GetLevel() + 1;
     }
 
-    public void SetPlayer(GameObject player)
+    public void SetPlayer(PlayerStats playerStats)
     {
-        this.playerStats = player.GetComponent<PlayerStats>();
+        this.playerStats = playerStats;
     }
 
     public string GetName()
