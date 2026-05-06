@@ -47,6 +47,13 @@ MonoBehaviour:
   level: 0
   cooldown: 5
   projectile: {fileID: 3521572451672629132, guid: 43086247a345e2348a8cb07941edfb91, type: 3}
-  damage: []
+  damage:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 15
+  - 15
+  - 20
   timeBetweenHits: 0.2
-  numberOfProjectiles: 
+  numberOfProjectiles: 01000000020000000200000003000000030000000400000004000000

@@ -884,6 +884,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1735095948684786205}
     m_Modifications:
+    - target: {fileID: 1083832410565652860, guid: 03186d3adc7807442a382ca965ecd094, type: 3}
+      propertyPath: cooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083832410565652860, guid: 03186d3adc7807442a382ca965ecd094, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083832410565652860, guid: 03186d3adc7807442a382ca965ecd094, type: 3}
+      propertyPath: timeBetweenHits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083832410565652860, guid: 03186d3adc7807442a382ca965ecd094, type: 3}
+      propertyPath: damage.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083832410565652860, guid: 03186d3adc7807442a382ca965ecd094, type: 3}
+      propertyPath: numberOfProjectiles.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6349087211570180387, guid: 03186d3adc7807442a382ca965ecd094, type: 3}
       propertyPath: m_Name
       value: MagicMissileAbility
