@@ -10,11 +10,11 @@ public class MagicMissileAbility : Ability
     private float force = 500;
     private float GetDamage()
     {
-        return damage[level] * playerStats.GetAttack();
+        return damage[level - 1] * playerStats.GetAttack();
     }
     private int GetNumerOfProjectiles()
     {
-        return numberOfProjectiles[level] + playerStats.GetNumberOfProyectiles();
+        return numberOfProjectiles[level - 1] + playerStats.GetNumberOfProyectiles();
     }
     public override void Activate()
     {

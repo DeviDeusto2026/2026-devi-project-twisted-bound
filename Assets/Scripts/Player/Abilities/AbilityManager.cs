@@ -23,7 +23,7 @@ public class AbilityManager : MonoBehaviour
     {
         foreach(Ability ability in abilityList){
             ability.SetPlayer(playerStats);
-            ability.SetLevel(0);
+            //ability.SetLevel(0);
         }
     }
 

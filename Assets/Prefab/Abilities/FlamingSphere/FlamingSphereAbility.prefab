@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6349087211570180387
+--- !u!1 &7649961011243578774
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8227612105958302273}
-  - component: {fileID: 1083832410565652860}
+  - component: {fileID: 2748258002013824267}
+  - component: {fileID: 3693067293624190104}
   m_Layer: 0
-  m_Name: MagicMissileAbility
+  m_Name: FlamingSphereAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8227612105958302273
+--- !u!4 &2748258002013824267
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6349087211570180387}
+  m_GameObject: {fileID: 7649961011243578774}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1083832410565652860
+--- !u!114 &3693067293624190104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6349087211570180387}
+  m_GameObject: {fileID: 7649961011243578774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c785fe15bcb9bd4abee2b59ad73ecf5, type: 3}
+  m_Script: {fileID: 11500000, guid: d1afb0e931e77bb4d9026e193433539a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MagicMissileAbility
+  m_EditorClassIdentifier: Assembly-CSharp::FlamingSphereAbility
   level: 0
-  cooldown: 5
-  projectile: {fileID: 3521572451672629132, guid: 43086247a345e2348a8cb07941edfb91, type: 3}
+  cooldown: 15
   damage:
-  - 10
-  - 10
+  - 5
   - 10
   - 10
   - 15
   - 15
   - 20
-  timeBetweenHits: 0.2
-  numberOfProjectiles: 01000000020000000200000003000000030000000400000004000000
+  - 20
+  distanceFromPlayer: 5
+  rotationSpeed: 90
+  sphereLifetime:
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  flamingSphere: {fileID: 4203409350689833687, guid: 6303b9e1968040a468f1254d2e5cd593, type: 3}
