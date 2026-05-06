@@ -4,34 +4,36 @@ using UnityEngine;
 public class MagicMissileAbility : Ability
 {
     [SerializeField] private GameObject projectile;
+    [SerializeField] private float[] damage;
+    [SerializeField] private float timeBetweenHits;
+    [SerializeField] private int[] numberOfProjectiles;
     private float force = 500;
-
-    private void Start()
+    private float GetDamage()
     {
-        this.level = 1;
-        this.cooldown = 3;
+        return damage[level] * playerStats.GetAttack();
+    }
+    private int GetNumerOfProjectiles()
+    {
+        return numberOfProjectiles[level] + playerStats.GetNumberOfProyectiles();
+    }
+    public override void Activate()
+    {
+        int nh = GetNumerOfProjectiles();
+        for (int i = 0; i < nh; i++)
+        {
+            Invoke(nameof(ThrowAbility), timeBetweenHits * i);
+        }
     }
 
-    public override void Activate()
+    private void ThrowAbility()
     {
         Transform playerTransform = this.playerStats.transform;
         Vector3 position = playerTransform.position;
         position += playerTransform.forward;
 
-        //Tener en cuenta daño y numero de projectiles
-        
         GameObject newProjectile = Instantiate(projectile, position, playerTransform.rotation);
-        newProjectile.GetComponent<AbilityAttack>().SetAttack(1);
-        
-        newProjectile.GetComponent<Rigidbody>().AddForce(playerTransform.forward * force);
+        newProjectile.GetComponent<AbilityAttack>().SetAttack(GetDamage());
 
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            this.TryActivate();
-        }
-    }
+    newProjectile.GetComponent<Rigidbody>().AddForce(playerTransform.forward* force);
+}
 }

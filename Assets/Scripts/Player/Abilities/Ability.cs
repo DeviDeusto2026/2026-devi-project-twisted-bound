@@ -6,8 +6,8 @@ public abstract class Ability : MonoBehaviour, IReward
     public const int maxLevel = 7;
 
     protected string abilityName;
-    protected int level;
-    protected float cooldown;
+    [SerializeField] protected int level;
+    [SerializeField] protected float cooldown;
     protected bool inCooldown = false;
     protected PlayerStats playerStats;
 
