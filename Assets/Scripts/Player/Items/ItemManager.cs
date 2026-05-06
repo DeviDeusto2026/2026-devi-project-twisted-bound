@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    private GameObject player;
-    [SerializeField] private List<Item> itemList = new List<Item>();
+    private List<Item> itemList = new List<Item>();
 
     void Start()
     {
+        this.itemList.AddRange(this.GetComponentsInChildren<Item>());
         InitiateObjects();
     }
 
