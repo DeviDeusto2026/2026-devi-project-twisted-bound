@@ -17,7 +17,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         effectManager = this.gameObject.GetComponent<EffectManager>();
-        itemManager = this.gameObject.GetComponent<ItemManager>();
+        itemManager = this.gameObject.GetComponentInChildren<ItemManager>();
     }
 
     public float GetHealthMax()

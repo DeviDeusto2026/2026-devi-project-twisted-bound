@@ -6,8 +6,8 @@ public abstract class Ability : MonoBehaviour, IReward
     public const int maxLevel = 7;
 
     protected string abilityName;
-    protected int level;
-    protected float cooldown;
+    [SerializeField] protected int level;
+    [SerializeField] protected float cooldown;
     protected bool inCooldown = false;
     protected PlayerStats playerStats;
 
@@ -48,9 +48,9 @@ public abstract class Ability : MonoBehaviour, IReward
         this.level = this.GetLevel() + 1;
     }
 
-    public void SetPlayer(GameObject player)
+    public void SetPlayer(PlayerStats playerStats)
     {
-        this.playerStats = player.GetComponent<PlayerStats>();
+        this.playerStats = playerStats;
     }
 
     public string GetName()
