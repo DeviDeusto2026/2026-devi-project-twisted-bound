@@ -3,12 +3,16 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
 
-    public float health;
+    [SerializeField] private float health;
     [SerializeField] private float attack;
     [SerializeField] private float velocity;
 
 
     private EffectManager effectManager;
+
+    public float Health { get => health; set => health = value; }
+    public float BaseAttack { get => attack; }
+    public float BaseVelocity { get => velocity; }
 
 
 
@@ -18,7 +22,12 @@ public class EnemyStats : MonoBehaviour
         effectManager = this.gameObject.GetComponent<EffectManager>();
     }
 
-
+    public void SetStats(float health, float attack, float velocity)
+    {
+        this.health = health;
+        this.attack = attack;
+        this.velocity = velocity;
+    }
 
     public float GetAttack()
     {

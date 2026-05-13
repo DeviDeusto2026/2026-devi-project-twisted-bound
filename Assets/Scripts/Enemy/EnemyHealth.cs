@@ -5,6 +5,8 @@ public class EnemyHealth : MonoBehaviour
 
     private EnemyStats enemyStats;
 
+    [SerializeField] private GameObject xpOrbPrefab;
+
     private void Start()
     {
         enemyStats = this.gameObject.GetComponent<EnemyStats>();
@@ -23,9 +25,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void SufferAttack(float attack)
     {
-        enemyStats.health -= attack;
+        enemyStats.Health -= attack;
 
-        if (enemyStats.health <= 0)
+        if (enemyStats.Health <= 0)
         {
             Die();
         }
@@ -35,6 +37,8 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         //Hacer cosas antes de morir (soltar experiencia, ...)
+        GameObject xpOrb = Instantiate(xpOrbPrefab);
+        xpOrb.transform.position = this.transform.position;
 
         //Destruir enemigo
         Destroy(this.gameObject);
