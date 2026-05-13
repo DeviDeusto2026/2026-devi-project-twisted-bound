@@ -8,8 +8,13 @@ public abstract class Ability : MonoBehaviour, IReward
     protected string abilityName;
     [SerializeField] protected int level;
     [SerializeField] protected float cooldown;
-    protected bool inCooldown = false;
+    protected bool inCooldown = true;
     protected PlayerStats playerStats;
+
+    private void Start()
+    {
+        Invoke(nameof(Abilitate), cooldown);
+    }
 
     public void TryActivate()
     {

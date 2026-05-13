@@ -5,14 +5,18 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5;
+    private PlayerStats playerStats;
     private Vector2 movementInput;
     private Vector2 lookInput;
 
+    private void Awake()
+    {
+        playerStats = this.GetComponentInChildren<PlayerStats>();
+    }
+
     private void Update()
     {
-        Debug.Log(movementInput);
-        this.transform.position += new Vector3(movementInput.x, 0, movementInput.y) * speed * Time.deltaTime;
+        this.transform.position += new Vector3(movementInput.x, 0, movementInput.y) * playerStats.GetVelocity() * Time.deltaTime;
 
         if (lookInput == Vector2.zero) return;
 

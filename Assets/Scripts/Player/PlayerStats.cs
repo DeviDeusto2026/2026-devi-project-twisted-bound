@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     private ItemManager itemManager;
     private EffectManager effectManager;
 
-    private void Start()
+    private void Awake()
     {
         effectManager = this.gameObject.GetComponent<EffectManager>();
         itemManager = this.gameObject.GetComponentInChildren<ItemManager>();

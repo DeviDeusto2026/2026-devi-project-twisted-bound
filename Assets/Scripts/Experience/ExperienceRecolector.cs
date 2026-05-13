@@ -8,13 +8,14 @@ public class ExperienceRecolector : MonoBehaviour
     private ExperienceBar experienceBar;
     private PlayerStats playerStats;
 
-    private void Start()
+    private void Awake()
     {   
         experienceBar = FindAnyObjectByType<ExperienceBar>();
         playerStats = this.gameObject.GetComponentInParent<PlayerStats>();
     }
+
     private void Update()
-    { 
+    {        
         this.transform.localScale = Vector3.one * GetArea() * 2;
     }
 
