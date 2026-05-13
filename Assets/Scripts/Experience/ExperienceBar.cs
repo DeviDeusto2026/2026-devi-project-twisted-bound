@@ -1,6 +1,6 @@
 using System.Collections;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExperienceBar : MonoBehaviour
 {
@@ -11,8 +11,17 @@ public class ExperienceBar : MonoBehaviour
     private const float constB = -5;
     private readonly float constC = Mathf.Exp((1 - constB) / constA);
 
+    [Header("Player")]
     [SerializeField] private PlayerLevelUpRewards player1;
     [SerializeField] private PlayerLevelUpRewards player2;
+
+    private Slider slider;
+
+    private void Start()
+    {
+        slider = this.gameObject.GetComponent<Slider>();
+    }
+
 
     public void AddExperience(float experience)
     {
@@ -31,16 +40,18 @@ public class ExperienceBar : MonoBehaviour
 
     private void CheckLevel()
     {
-        float newLevel = Mathf.Max(Mathf.Floor(constA * Mathf.Log10(experience + constC) + constB),1);
+        float newLevel = Mathf.Max(constA * Mathf.Log10(experience + constC) + constB, 1);
 
-        if (newLevel < level) return;
+        slider.value = newLevel - (int)newLevel;
+
+        if (Mathf.Floor(newLevel) < level) return;
         
         StartCoroutine(LevelUp());
     }
 
     private IEnumerator LevelUp()
     {
-        level++;
+        level++; //Hacer visible el nivel
 
         //Detener el juego
         Time.timeScale = 0;
@@ -54,6 +65,6 @@ public class ExperienceBar : MonoBehaviour
         //Reanudar el juego
         player1.ResumeGame();
         player2.ResumeGame();
-        Time.timeScale = 1;
+        Time.timeScale = 1; //Hacer que el tiempo suba proceduralmente
     }
 }
