@@ -1,34 +1,30 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [Header("Players")]
     public GameObject target;
     public GameObject player1;
     public GameObject player2;
 
     private EnemyStats enemyStats;
 
-    public float rotationSpeed;
-    
-    private Rigidbody rb;
-    private float diseredAngle;
-    
+    private NavMeshAgent agent;
 
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        this.rb = this.GetComponent<Rigidbody>();
         enemyStats = this.gameObject.GetComponent<EnemyStats>();
+        agent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         SearchTarget();
-        Rotate();
+        //Rotate();
         Move();
     }
 
@@ -50,28 +46,35 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
-    private void Rotate()
-    {
-        Vector3 targetDirection = (target.transform.position - this.transform.position).normalized;
+    //private void Rotate()
+    //{
+    //    Vector3 targetDirection = (target.transform.position - this.transform.position).normalized;
 
-        if (this.transform.forward == targetDirection) return;
+    //    if (this.transform.forward == targetDirection) return;
 
-        float angle = Vector3.SignedAngle(this.transform.forward, targetDirection, Vector3.up);
-        diseredAngle = angle;
-        float maxAngle = Time.fixedDeltaTime * rotationSpeed;
+    //    float angle = Vector3.SignedAngle(this.transform.forward, targetDirection, Vector3.up);
+    //    diseredAngle = angle;
+    //    float maxAngle = Time.fixedDeltaTime * rotationSpeed;
 
-        if (Mathf.Abs(angle) > maxAngle)
-        {
-            angle = Mathf.Sign(angle) * maxAngle;
-        }
+    //    if (Mathf.Abs(angle) > maxAngle)
+    //    {
+    //        angle = Mathf.Sign(angle) * maxAngle;
+    //    }
 
-        this.transform.Rotate(Vector3.up, angle);
-    }
+    //    this.transform.Rotate(Vector3.up, angle);
+    //}
+
+    //private void Move()
+    //{
+    //    float speedModifier = 1 / ((Mathf.Abs(diseredAngle) / 36) + 1);
+    //    rb.linearVelocity = this.transform.forward * enemyStats.GetVelocity() * speedModifier;
+        
+    //}
+
 
     private void Move()
     {
-        float speedModifier = 1 / ((Mathf.Abs(diseredAngle) / 36) + 1);
-        rb.linearVelocity = this.transform.forward * enemyStats.GetVelocity() * speedModifier;
-        
+        agent.speed = enemyStats.GetVelocity();
+        agent.SetDestination(target.transform.position);
     }
 }

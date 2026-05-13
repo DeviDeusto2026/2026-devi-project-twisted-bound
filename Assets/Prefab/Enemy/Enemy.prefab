@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 8169375262185365357}
   - component: {fileID: 5551671663686682245}
   - component: {fileID: 7889868349477572393}
+  - component: {fileID: 6983192575610523221}
+  - component: {fileID: 1420672409032196266}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -161,7 +163,6 @@ MonoBehaviour:
   target: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
-  rotationSpeed: 40
 --- !u!114 &8169375262185365357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +203,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac362c1440b1ee4f99c8116797a0f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+--- !u!195 &6983192575610523221
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411421251927306308}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1420672409032196266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411421251927306308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e55796b4c11484599464a24316a4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EffectManager
