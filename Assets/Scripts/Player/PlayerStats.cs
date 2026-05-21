@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     private float healthMax = 100;
     private float healthActual = 100;
     private float resistance = 0;
-    private float velocity = 20;
+    private float velocity = 7;
     private float healthRegeneration = 0.1f;
     private float pickupAreaSize = 10;
 
