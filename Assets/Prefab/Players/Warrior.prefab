@@ -915,6 +915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonClawsAbility
       objectReference: {fileID: 0}
+    - target: {fileID: 8075001605492760306, guid: 556512ca9a2076f4ca9339001c9562f8, type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
