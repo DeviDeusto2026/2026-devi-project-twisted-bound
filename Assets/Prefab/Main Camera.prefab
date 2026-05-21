@@ -142,9 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   playerTag: Warrior
-  height: 10
-  offset: -10
-  angle: 45
+  height: 30
+  offset: -20
+  angle: 60
 --- !u!1 &2283411279146930773
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   playerTag: Wizard
-  height: 10
-  offset: -10
-  angle: 45
+  height: 30
+  offset: -20
+  angle: 60
