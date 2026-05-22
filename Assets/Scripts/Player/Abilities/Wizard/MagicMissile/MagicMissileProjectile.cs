@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MagicMissileProjectile : MonoBehaviour
 {
+    [SerializeField] float timeToLive = 5;
+    
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(this.gameObject);
@@ -9,6 +11,6 @@ public class MagicMissileProjectile : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject, 5); 
+        Destroy(this.gameObject, timeToLive); 
     }
 }

@@ -35,5 +35,5 @@ public class MagicMissileAbility : Ability
         newProjectile.GetComponent<AbilityAttack>().SetAttack(GetDamage());
 
     newProjectile.GetComponent<Rigidbody>().AddForce(playerTransform.forward* force);
-}
+    }
 }
