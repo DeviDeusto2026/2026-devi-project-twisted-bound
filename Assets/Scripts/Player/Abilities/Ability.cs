@@ -5,11 +5,13 @@ public abstract class Ability : MonoBehaviour, IReward
 {
     public const int maxLevel = 7;
 
-    protected string abilityName;
+    [SerializeField] protected string abilityName;
     [SerializeField] protected int level;
     [SerializeField] protected float cooldown;
     protected bool inCooldown = true;
     protected PlayerStats playerStats;
+    [SerializeField] protected string imagePath;
+    [SerializeField] protected string description;
 
     private void Start()
     {
@@ -61,5 +63,14 @@ public abstract class Ability : MonoBehaviour, IReward
     public string GetName()
     {
         return this.abilityName;
+    }
+
+    public string GetImagePath()
+    {
+        return this.imagePath;
+    }
+    public string GetDescription()
+    {
+        return this.description;
     }
 }

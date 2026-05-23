@@ -6,8 +6,10 @@ public class Item : MonoBehaviour, IReward
     [SerializeField] Stat stat;
     [SerializeField] int level;
     [SerializeField] float power;
+    [SerializeField] string imagePath;
+    [SerializeField] string description;
 
-    
+
     public Stat GetStat()
     {
         return stat;
@@ -35,5 +37,14 @@ public class Item : MonoBehaviour, IReward
     public string GetName()
     {
         return this.itemName;
+    }
+
+    public string GetImagePath()
+    {
+        return this.imagePath;
+    }
+    public string GetDescription()
+    {
+        return this.description;
     }
 }
