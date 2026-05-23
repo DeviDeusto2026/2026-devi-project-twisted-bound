@@ -1,6 +1,5 @@
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,8 +12,13 @@ public class PlayerStats : MonoBehaviour
     private ItemManager itemManager;
     private EffectManager effectManager;
 
+    private float enemyTimer = 0.5f;
+
+    Dictionary<EnemyAttack, float> enemyDict = new Dictionary<EnemyAttack, float>();
+    
+
     private void Awake()
-    {
+    { 
         effectManager = this.gameObject.GetComponent<EffectManager>();
         itemManager = this.gameObject.GetComponentInChildren<ItemManager>();
     }
@@ -76,13 +80,40 @@ public class PlayerStats : MonoBehaviour
         return 1 + effectManager.GetPowerOf(Stat.ATTACK) + itemManager.GetStat(Stat.ATTACK);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         EnemyAttack enemyAttack = collision.gameObject.GetComponent<EnemyAttack>();
 
         if (enemyAttack == null) return;
 
-        SufferDamage(enemyAttack.GetAttack());
+        if (!enemyDict.ContainsKey(enemyAttack))
+        {
+            enemyDict.Add(enemyAttack, enemyTimer);
+            SufferDamage(enemyAttack.GetAttack());
+        }
+
+        CheckEnemyAttack();
+    }
+
+    void CheckEnemyAttack()
+    {
+        List<EnemyAttack> enemyAttackList = new List<EnemyAttack>(enemyDict.Keys);
+
+        foreach (EnemyAttack EnemyAttack in enemyAttackList)
+        {
+            float newTimer;
+
+            enemyDict.TryGetValue(EnemyAttack, out newTimer);
+            newTimer -= Time.deltaTime;
+
+            if (newTimer <= 0)
+            { 
+                enemyDict.Remove(EnemyAttack);
+                continue;
+            }
+
+            enemyDict[EnemyAttack] = newTimer;
+        }
     }
 
     void SufferDamage(float damage)
@@ -92,11 +123,13 @@ public class PlayerStats : MonoBehaviour
         if (trueDamage < 1) trueDamage = 1;
 
         this.healthActual -= trueDamage;
+        Debug.Log($"Vida actual: {healthActual}");
 
         if (healthActual <= 0) Die();
     }
     void Die()
     {
+        Debug.Log("MUERTE");
         Destroy(this.gameObject);
     }
 }
