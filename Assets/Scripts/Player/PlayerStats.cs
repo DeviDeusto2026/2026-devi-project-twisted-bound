@@ -6,7 +6,6 @@ public class PlayerStats : MonoBehaviour
 {
     private float healthMax = 100;
     private float healthActual = 100;
-    private float resistance = 0;
     private float velocity = 7;
     private float healthRegeneration = 0.1f;
     private float pickupAreaSize = 10;
@@ -31,7 +30,7 @@ public class PlayerStats : MonoBehaviour
     }
     public float GetResistance()
     {
-        return resistance * (1 + effectManager.GetPowerOf(Stat.RESISTANCE) + itemManager.GetStat(Stat.RESISTANCE));
+        return (effectManager.GetPowerOf(Stat.RESISTANCE) + itemManager.GetStat(Stat.RESISTANCE));
     }
 
     public float GetVelocity()
@@ -88,7 +87,11 @@ public class PlayerStats : MonoBehaviour
 
     void SufferDamage(float damage)
     {
-        this.healthActual -= damage;
+        float trueDamage = damage - GetResistance();
+
+        if (trueDamage < 1) trueDamage = 1;
+
+        this.healthActual -= trueDamage;
 
         if (healthActual <= 0) Die();
     }
