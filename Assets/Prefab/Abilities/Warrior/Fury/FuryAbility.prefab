@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2214336469488066031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6755087353928439561}
+  - component: {fileID: 4929868584018885660}
+  m_Layer: 0
+  m_Name: FuryAbility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6755087353928439561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2214336469488066031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.40648, y: -0.00002, z: 13.77078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4929868584018885660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2214336469488066031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf37451b0bc99e44adde6ab17fa41b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FuryAbility
+  abilityName: 
+  level: 0
+  cooldown: 20
+  imagePath: 
+  description: 
+  attack:
+  - 0.2
+  - 0.2
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.6
+  - 0.6
+  healthRegen:
+  - 1
+  - 1
+  - 1.5
+  - 1.5
+  - 2
+  - 2
+  - 3
+  velocity: 0.4
+  resistanceReduction:
+  - -10
+  - -10
+  - -15
+  - -15
+  - -20
+  - -20
+  - -30
+  duration:
+  - 5
+  - 5
+  - 6
+  - 6
+  - 8
+  - 8
+  - 10
