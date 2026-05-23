@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("Players")]
-    public GameObject target;
-    public GameObject player1;
-    public GameObject player2;
+    private PlayerStats target;
+    private PlayerStats player1;
+    private PlayerStats player2;
 
     private EnemyStats enemyStats;
 
@@ -20,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
         agent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         SearchTarget();
@@ -28,21 +25,18 @@ public class EnemyMovement : MonoBehaviour
         Move();
     }
 
-
-
     private void SearchTarget()
     {
-        float distanceToP1 = (this.transform.position - player1.transform.position).magnitude;
-        float distanceToP2 = (this.transform.position - player2.transform.position).magnitude;
+        float distanceToP1 = (player1.isDead)? Mathf.Infinity : (this.transform.position - player1.transform.position).magnitude;
+        float distanceToP2 = (player2.isDead)? Mathf.Infinity : (this.transform.position - player2.transform.position).magnitude;
 
-        if (distanceToP1 < distanceToP2)
-        {
-            target = player1;
-        }
-        else
-        {
-            target = player2;
-        }
+        target = (distanceToP1 < distanceToP2)? player1 : player2;
+    }
+
+    public void SetPlayers(GameObject player1, GameObject player2)
+    {
+        this.player1 = player1.GetComponent<PlayerStats>();
+        this.player2 = player2.GetComponent<PlayerStats>();
     }
 
 
