@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -9,6 +10,9 @@ public class PlayerStats : MonoBehaviour
     private float healthRegeneration = 0.1f;
     private float pickupAreaSize = 10;
     public bool isDead = false;
+
+    [SerializeField] float healthRegenTimerMax = 5;
+    float healthRegenTimer;
     [SerializeField] GameObject reviveSphere;
 
     private ItemManager itemManager;
@@ -23,6 +27,27 @@ public class PlayerStats : MonoBehaviour
     { 
         effectManager = this.gameObject.GetComponent<EffectManager>();
         itemManager = this.gameObject.GetComponentInChildren<ItemManager>();
+        healthRegenTimer = healthRegenTimerMax;
+    }
+
+    private void Update()
+    {
+        RegenHealth();
+    }
+
+    void RegenHealth()
+    {
+        if (enemyDict.Keys.ToArray<EnemyAttack>().Length == 0) return;
+
+        healthRegenTimer -= Time.deltaTime;
+        if (healthRegenTimer > 0) return;
+
+        healthRegenTimer = healthRegenTimerMax;
+        if (GetHealthActual() + GetHealthRegeneration() < GetHealthMax())
+        {
+            healthActual += GetHealthRegeneration();
+        }
+
     }
 
     public float GetHealthMax()
@@ -129,11 +154,11 @@ public class PlayerStats : MonoBehaviour
 
         if (healthActual <= 0) Die();
     }
-    void Die()
+    public void Die()
     {
-        Debug.Log("MUERTE");
         isDead = true;
-        //Instantiate(reviveSphere);
+        GameObject sphere = Instantiate(reviveSphere, this.transform);
+        sphere.GetComponent<Revive>().SetPlayerStats(this);
     }
 
     public void Revive()

@@ -1,0 +1,41 @@
+using UnityEngine;
+
+public class Revive : MonoBehaviour
+{
+    [SerializeField] float reviveBarMax;
+    float reviveBar = 0;
+    [SerializeField] float gain;
+    [SerializeField] float lifeTime;
+    string targetTag;
+    PlayerStats playerStats;
+    
+    private void Start()
+    {
+        targetTag = (this.gameObject.tag == "Wizard")? "Warrior":"Wizard";
+        Destroy(this.gameObject, lifeTime);
+    }
+
+    public void SetPlayerStats(PlayerStats playerStats)
+    {
+        this.playerStats = playerStats;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        string tag = other.gameObject.tag;
+
+        if (tag != targetTag) return;
+
+        reviveBar += gain;
+        CheckReviveBar();
+    }
+
+    void CheckReviveBar()
+    {
+        Debug.Log($"Bar: {reviveBar}");
+        if (reviveBar <= reviveBarMax) return;
+
+        playerStats.Revive();
+        Destroy(this.gameObject);
+    }
+}
