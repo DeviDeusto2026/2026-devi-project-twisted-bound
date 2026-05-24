@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
     private float velocity = 7;
     private float healthRegeneration = 0.1f;
     private float pickupAreaSize = 10;
+    public bool isDead = false;
+    [SerializeField] GameObject reviveSphere;
 
     private ItemManager itemManager;
     private EffectManager effectManager;
@@ -130,6 +132,12 @@ public class PlayerStats : MonoBehaviour
     void Die()
     {
         Debug.Log("MUERTE");
-        Destroy(this.gameObject);
+        isDead = true;
+        //Instantiate(reviveSphere);
+    }
+
+    public void Revive()
+    {
+        isDead = false;
     }
 }

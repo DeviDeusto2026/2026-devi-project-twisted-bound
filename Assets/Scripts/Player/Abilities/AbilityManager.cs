@@ -16,6 +16,7 @@ public class AbilityManager : MonoBehaviour
 
     void Update()
     {
+        if (playerStats.isDead) return;
         ActivateAbilities();
     }
 

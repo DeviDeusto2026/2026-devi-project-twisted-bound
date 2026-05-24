@@ -137,8 +137,6 @@ public class WaveManager : MonoBehaviour
 
         //Assign players
         EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
-        enemyMovement.player1 = player1;
-        enemyMovement.player2 = player2;
-
+        enemyMovement.SetPlayers(player1, player2);
     }
 }

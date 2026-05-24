@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour
 {
     private PlayerStats target;
-    private PlayerStats player1;
-    private PlayerStats player2;
+    public PlayerStats player1;
+    public PlayerStats player2;
 
     private EnemyStats enemyStats;
 

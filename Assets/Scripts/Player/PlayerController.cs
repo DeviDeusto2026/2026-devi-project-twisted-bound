@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (playerStats.isDead) return;
+
         this.transform.position += new Vector3(movementInput.x, 0, movementInput.y) * playerStats.GetVelocity() * Time.deltaTime;
 
         if (lookInput == Vector2.zero) return;
