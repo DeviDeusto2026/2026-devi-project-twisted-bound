@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PlayerLevelUpRewards : MonoBehaviour
 {
-    GameObject player;
+    private GameObject player;
     private const int maxAbilities = 5;
     private const int maxItems = 4;
 
-    [SerializeField] private GameObject prefabRewardCanvas;
+    [Tooltip("The name of the reward selector for this player")]
+    [SerializeField] private string selectorName;
     private RewardSelector rewardSelector;
 
     public bool RewardChoosen { get => rewardSelector.rewardChoosen; }
 
 
-    public void Activate()
+    private void Start()
     {
         player = this.gameObject;
+        rewardSelector = GameObject.Find(selectorName).GetComponent<RewardSelector>();
+    }
+
+    public void PrepareNewRewards()
+    {
         List<Ability> abilityPool = CalculateAbilityPool();
         List<Item> itemPool = CalculateItemPool();
 
@@ -26,10 +32,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
         Debug.Log($"El size del reward es {rewardPool.Count}");
         List<IReward> rewards = CalculateReward(rewardPool);
 
-        GameObject rewardCanvas = Instantiate(prefabRewardCanvas);
-        rewardSelector = rewardCanvas.GetComponent<RewardSelector>();
-        rewardSelector.rewardList = rewards;
-        rewardSelector.ShowRewards();
+        rewardSelector.SetNewRewards(rewards);
     }
 
     private List<Ability> CalculateAbilityPool()
@@ -110,11 +113,5 @@ public class PlayerLevelUpRewards : MonoBehaviour
 
 
 
-    public void ResumeGame()
-    {
-        Destroy(rewardSelector.gameObject);
-    }
-
     
-    //Sacar 3 recompensas
 }

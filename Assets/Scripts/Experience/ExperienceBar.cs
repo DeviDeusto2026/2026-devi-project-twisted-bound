@@ -57,14 +57,15 @@ public class ExperienceBar : MonoBehaviour
         Time.timeScale = 0;
 
         //Enseñar habilidades y que escogan una
-        player1.Activate();
-        player2.Activate();
+        player1.PrepareNewRewards();
+        player2.PrepareNewRewards();
+        UIManager.Instance.OpenLevelUp();
 
         yield return new WaitUntil(() => player1.RewardChoosen && player2.RewardChoosen);
 
         //Reanudar el juego
-        player1.ResumeGame();
-        player2.ResumeGame();
+        UIManager.Instance.CloseLevelUp();
+
         Time.timeScale = 1; //Hacer que el tiempo suba proceduralmente
     }
 }

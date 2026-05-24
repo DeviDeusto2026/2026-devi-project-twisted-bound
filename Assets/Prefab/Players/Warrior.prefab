@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ed4904a28dfb140a30407a25f6caa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLevelUpRewards
-  prefabRewardCanvas: {fileID: 8745212629609754135, guid: 1047faf848792a842b4d1aaf746a6bc3, type: 3}
+  selectorName: RewardPanelP1
 --- !u!114 &542652189586239331
 MonoBehaviour:
   m_ObjectHideFlags: 0

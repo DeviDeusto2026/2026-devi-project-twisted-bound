@@ -33,7 +33,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> spawnPoints;
     private List<Vector3> possibleSpawns = new List<Vector3>();
     [SerializeField] private int possibleSpawnBaseMaxAmount;
-    [SerializeField] private float possibleSpawnMaxAmountIncrcease;
+    [SerializeField] private float possibleSpawnMaxAmountIncrease;
     private int possibleSpawnMaxAmount;
 
     [Header("Players")]
@@ -55,7 +55,7 @@ public class WaveManager : MonoBehaviour
 
         if (timeToNextWave <= 0)
         {
-            SpawnEnemyWave();
+            StartCoroutine(SpawnEnemyWave());
             timeToNextWave = timeBetweenWaves;
         }
 
@@ -92,8 +92,8 @@ public class WaveManager : MonoBehaviour
     {
         float clockMinute = Mathf.Floor(clock / 60);
 
-        enemySpawnAmount = Mathf.FloorToInt(possibleSpawnBaseMaxAmount + possibleSpawnMaxAmountIncrcease * clockMinute);
-        possibleSpawnMaxAmount =  Mathf.FloorToInt(possibleSpawnBaseMaxAmount + possibleSpawnMaxAmountIncrcease * clockMinute);
+        enemySpawnAmount = Mathf.FloorToInt(enemySpawnBaseAmount + enemySpawnAmountIncrease * clockMinute);
+        possibleSpawnMaxAmount =  Mathf.FloorToInt(possibleSpawnBaseMaxAmount + possibleSpawnMaxAmountIncrease * clockMinute);
 
     }
 
@@ -109,7 +109,7 @@ public class WaveManager : MonoBehaviour
             //Spawnearlo con esa posicion
             SpawnEnemy(possibleSpawns[spanwIndex]);
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(timeBetweenWaves/(2*enemySpawnAmount));
         }
         
     }

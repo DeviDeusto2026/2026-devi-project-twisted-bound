@@ -6,18 +6,26 @@ using UnityEngine.UI;
 
 public class RewardSelector : MonoBehaviour
 {
-    public bool rewardChoosen = false;
-    [SerializeField] List<Button> buttonList;
-    public List<IReward> rewardList;
+    [SerializeField] private List<RewardButton> buttonList;
+    private List<IReward> rewardList;
 
-    public void ShowRewards()
+    public bool rewardChoosen = false;
+    
+
+    public void SetNewRewards(List<IReward> rewards)
     {
+        rewardList = rewards;
+        rewardChoosen = false;
+
         for(int i = 0; i<buttonList.Count; i++)
         {
-            TextMeshPro textMeshPro = buttonList[i].GetComponentInChildren<TextMeshPro>();
-            string rewardName = rewardList[i].GetName();
+            RewardButton rb = buttonList[i];
+            IReward reward = rewardList[i];
 
-            //textMeshPro.SetText(rewardName); //Esto se a comentado porque como algunas habilidades no tienen nombres da error al hacer pruebas
+            rb.SetLevel(reward.GetLevel());
+            rb.SetName(reward.GetName());
+            rb.SetImage(reward.GetImagePath());
+            rb.SetDescription(reward.GetDescription());
         }
     }
 
@@ -31,11 +39,11 @@ public class RewardSelector : MonoBehaviour
 
         ColorBlock buttonColor = ColorBlock.defaultColorBlock;
         buttonColor.disabledColor = Color.green;
-        buttonList[option].colors = buttonColor;
+        buttonList[option].SetButtonColor(buttonColor);
 
-        foreach (Button button in buttonList)
+        foreach (RewardButton rb in buttonList)
         {
-            button.interactable = false;
+            rb.SetInteractable(false);
         }
 
 
