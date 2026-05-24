@@ -373,7 +373,7 @@ MonoBehaviour:
   enemySpawnBaseAmount: 20
   enemySpawnAmountIncrease: 20
   timeBetweenSpawnChange: 60
-  spawnPoints: []
+  spawners: {fileID: 2028169280}
   possibleSpawnBaseMaxAmount: 2
   possibleSpawnMaxAmountIncrease: 0.2
   player1: {fileID: 0}
@@ -1679,6 +1679,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a82d307e19c484e42b28bee899bc0dc0, type: 3}
+--- !u!1 &2028169280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2406658299556105896, guid: a82d307e19c484e42b28bee899bc0dc0, type: 3}
+  m_PrefabInstance: {fileID: 2028169279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2133427290
 PrefabInstance:
   m_ObjectHideFlags: 0

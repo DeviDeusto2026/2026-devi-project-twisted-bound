@@ -30,7 +30,8 @@ public class WaveManager : MonoBehaviour
     private float timeToSpawnChange = 0;
 
     [Header("Spawners")]
-    [SerializeField] private List<GameObject> spawnPoints;
+    [SerializeField] private GameObject spawners;
+    private List<Vector3> spawnPoints;
     private List<Vector3> possibleSpawns = new List<Vector3>();
     [SerializeField] private int possibleSpawnBaseMaxAmount;
     [SerializeField] private float possibleSpawnMaxAmountIncrease;
@@ -44,6 +45,13 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         timeToNextWave = timeBetweenWaves;
+
+        Transform[] transforms = spawners.GetComponentsInChildren<Transform>();
+        spawnPoints = new List<Vector3>(transforms.Length);
+        foreach (Transform t in transforms)
+        {
+            spawnPoints.Add(t.position);
+        }
     }
 
     // Update is called once per frame
@@ -76,8 +84,7 @@ public class WaveManager : MonoBehaviour
 
         while (possibleSpawns.Count < possibleSpawnAmount)
         {
-            Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
-            spawnPoint.y = 1;
+            Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
 
             if (!possibleSpawns.Contains(spawnPoint))
             {
@@ -105,9 +112,11 @@ public class WaveManager : MonoBehaviour
         {
             //Elegir punto de spawn
             int spanwIndex = Random.Range(0,possibleSpawns.Count);
+            Vector3 spawnerPosition = possibleSpawns[spanwIndex];
+            Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
 
             //Spawnearlo con esa posicion
-            SpawnEnemy(possibleSpawns[spanwIndex]);
+            SpawnEnemy(spawnPosition);
 
             yield return new WaitForSeconds(timeBetweenWaves/(2*enemySpawnAmount));
         }
