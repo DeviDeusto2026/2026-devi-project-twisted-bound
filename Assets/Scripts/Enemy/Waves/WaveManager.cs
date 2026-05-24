@@ -39,6 +39,15 @@ public class WaveManager : MonoBehaviour
     [Header("Players")]
     [SerializeField] private GameObject player1;
     [SerializeField] private GameObject player2;
+    [SerializeField] string tagPlayer1 = "Warrior";
+    [SerializeField] string tagPlayer2 = "Wizard";
+
+    void OnGameStart()
+    {
+        this.player1 = GameObject.FindWithTag(tagPlayer1);
+        this.player2 = GameObject.FindWithTag(tagPlayer2);
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

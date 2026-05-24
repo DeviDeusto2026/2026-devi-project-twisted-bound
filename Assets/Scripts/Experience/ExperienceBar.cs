@@ -14,8 +14,15 @@ public class ExperienceBar : MonoBehaviour
     [Header("Player")]
     [SerializeField] private PlayerLevelUpRewards player1;
     [SerializeField] private PlayerLevelUpRewards player2;
-
+    [SerializeField] string tagPlayer1;
+    [SerializeField] string tagPlayer2;
     private Slider slider;
+
+    void OnGameStart()
+    {
+        player1 = GameObject.FindWithTag(tagPlayer1).GetComponent<PlayerLevelUpRewards>();
+        player2 = GameObject.FindWithTag(tagPlayer2).GetComponent<PlayerLevelUpRewards>();
+    }
 
     private void Start()
     {
