@@ -177,6 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53cfb7745b35dd409b18aa6ea09d1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  isDead: 0
+  reviveSphere: {fileID: 1398543653470995729, guid: 7379ef2f28feba24a81eca30611b4909, type: 3}
 --- !u!114 &3914714998428173017
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -129,11 +129,11 @@ public class PlayerStats : MonoBehaviour
 
         if (healthActual <= 0) Die();
     }
-    void Die()
+    public void Die()
     {
-        Debug.Log("MUERTE");
         isDead = true;
-        //Instantiate(reviveSphere);
+        GameObject sphere = Instantiate(reviveSphere, this.transform);
+        sphere.GetComponent<Revive>().SetPlayerStats(this);
     }
 
     public void Revive()

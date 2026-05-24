@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee518a4dfdf8a448bf91c69c16af8f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConeOfColdAbility
-  level: 1
+  abilityName: 
+  level: 0
   cooldown: 5
+  imagePath: 
+  description: 
   projectile: {fileID: 1350104007055904608, guid: 117c4af20dd79f9468d58ef1fbde1c79, type: 3}
   damage:
   - 5
