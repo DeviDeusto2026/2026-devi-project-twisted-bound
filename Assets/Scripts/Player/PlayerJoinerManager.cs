@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerJoinerManager : MonoBehaviour
 {
-    bool player1Joined = false;
-    bool player2Joined = false;
+    public bool player1Joined = false;
+    public bool player2Joined = false;
 
     [SerializeField] PlayerInputManager player1Manager;
     [SerializeField] PlayerInputManager player2Manager;
@@ -22,5 +22,23 @@ public class PlayerJoinerManager : MonoBehaviour
             player2Joined = true;
             player2Manager.enabled = false;
         }
+    }
+
+
+
+    public void ResetPlayerJoiner()
+    {
+        player1Joined = false;
+        player2Joined = false;
+
+        player1Manager.enabled = true;
+        player2Manager.enabled = false;
+
+        PlayerStats[] players = FindObjectsByType<PlayerStats>(FindObjectsSortMode.None);
+        foreach (PlayerStats player in players)
+        {
+            Destroy(player.gameObject);
+        }
+
     }
 }
