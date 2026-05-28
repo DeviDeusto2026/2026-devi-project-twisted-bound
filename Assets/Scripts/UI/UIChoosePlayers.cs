@@ -77,7 +77,7 @@ public class UIChoosePlayers : MonoBehaviour
         GameObject[] gameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
         foreach (GameObject gO in gameObjects)
         {
-            gO.BroadcastMessage("OnGameStart");
+            gO.BroadcastMessage("OnGameStart", SendMessageOptions.DontRequireReceiver);
         }
 
 
@@ -87,8 +87,7 @@ public class UIChoosePlayers : MonoBehaviour
 
     public void ResetPlayerChoose()
     {
-        joinerManager.ResetPlayerJoiner();
-        ChoosePlayers();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

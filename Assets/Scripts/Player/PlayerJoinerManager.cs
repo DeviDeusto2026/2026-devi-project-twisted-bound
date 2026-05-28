@@ -25,20 +25,4 @@ public class PlayerJoinerManager : MonoBehaviour
     }
 
 
-
-    public void ResetPlayerJoiner()
-    {
-        player1Joined = false;
-        player2Joined = false;
-
-        player1Manager.enabled = true;
-        player2Manager.enabled = false;
-
-        PlayerStats[] players = FindObjectsByType<PlayerStats>(FindObjectsSortMode.None);
-        foreach (PlayerStats player in players)
-        {
-            Destroy(player.gameObject);
-        }
-
-    }
 }
