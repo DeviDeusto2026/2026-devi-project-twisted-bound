@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIChoosePlayers : MonoBehaviour
@@ -33,6 +34,7 @@ public class UIChoosePlayers : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Time.timeScale = 0;
         ChoosePlayers();   
     }
 
@@ -70,10 +72,13 @@ public class UIChoosePlayers : MonoBehaviour
 
     public void StartGame()
     {
-        //POner el timeSale a 1 --> IMPORTANTE hay que poner el timeScale a 0 al empezar
+        Time.timeScale = 1;
 
-        //Mandar mensaje de empieza el juego (SendMessage o similares)
-
+        GameObject[] gameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach (GameObject gO in gameObjects)
+        {
+            gO.BroadcastMessage("OnGameStart");
+        }
 
 
         UIManager.Instance.StartGame();
