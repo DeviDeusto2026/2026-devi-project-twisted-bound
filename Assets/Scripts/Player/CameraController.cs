@@ -8,9 +8,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] float angle;
     GameObject player;
 
-    void OnGameStart()
+    public void OnGameStart()
     {
-        GameObject player = GameObject.FindWithTag(playerTag);
+        player = GameObject.FindWithTag(playerTag);
     }
 
     void Update()

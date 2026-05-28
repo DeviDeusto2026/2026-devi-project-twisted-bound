@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
     {
         choosePlayerPanel.SetActive(false);
         xpBarPanel.SetActive(true);
-        separationLine.SetActive(false);
+        separationLine.SetActive(true);
 
     }
 

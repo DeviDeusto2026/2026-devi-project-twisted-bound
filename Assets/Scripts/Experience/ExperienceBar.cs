@@ -18,7 +18,7 @@ public class ExperienceBar : MonoBehaviour
     [SerializeField] string tagPlayer2;
     private Slider slider;
 
-    void OnGameStart()
+    public void OnGameStart()
     {
         player1 = GameObject.FindWithTag(tagPlayer1).GetComponent<PlayerLevelUpRewards>();
         player2 = GameObject.FindWithTag(tagPlayer2).GetComponent<PlayerLevelUpRewards>();

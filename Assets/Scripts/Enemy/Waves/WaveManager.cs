@@ -43,7 +43,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] string tagPlayer1 = "Warrior";
     [SerializeField] string tagPlayer2 = "Wizard";
 
-    void OnGameStart()
+    public void OnGameStart()
     {
         this.player1 = GameObject.FindWithTag(tagPlayer1);
         this.player2 = GameObject.FindWithTag(tagPlayer2);
@@ -122,7 +122,7 @@ public class WaveManager : MonoBehaviour
             //Elegir punto de spawn
             int spanwIndex = Random.Range(0,possibleSpawns.Count);
             Vector3 spawnerPosition = possibleSpawns[spanwIndex];
-            Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
+            Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
 
             //Spawnearlo con esa posicion
             SpawnEnemy(spawnPosition);

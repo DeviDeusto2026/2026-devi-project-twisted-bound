@@ -18,7 +18,15 @@ public class PlayerLevelUpRewards : MonoBehaviour
     public void OnGameStart()
     {
         player = this.gameObject;
-        rewardSelector = GameObject.FindGameObjectWithTag(selectorName).GetComponent<RewardSelector>();
+        RewardSelector[] rsArray = FindObjectsByType<RewardSelector>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (RewardSelector rs in rsArray)
+        {
+            if (rs.CompareTag(selectorName))
+            {
+                rewardSelector = rs;
+                break;
+            }
+        }
     }
 
     public void PrepareNewRewards()
