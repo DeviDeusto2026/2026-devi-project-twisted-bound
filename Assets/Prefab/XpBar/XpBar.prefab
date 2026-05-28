@@ -217,6 +217,8 @@ MonoBehaviour:
   level: 1
   player1: {fileID: 0}
   player2: {fileID: 0}
+  tagPlayer1: Warrior
+  tagPlayer2: Wizard
 --- !u!1 &6579144922524477786
 GameObject:
   m_ObjectHideFlags: 0

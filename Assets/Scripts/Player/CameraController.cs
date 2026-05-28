@@ -6,12 +6,15 @@ public class CameraController : MonoBehaviour
     [SerializeField] float height;
     [SerializeField] float offset;
     [SerializeField] float angle;
+    GameObject player;
 
-    
-    void Update()
+    void OnGameStart()
     {
         GameObject player = GameObject.FindWithTag(playerTag);
+    }
 
+    void Update()
+    {
         if (player == null) return;
 
         Vector3 position = player.transform.position;
