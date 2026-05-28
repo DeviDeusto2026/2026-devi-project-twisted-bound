@@ -156,6 +156,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Die()
     {
+        RunDataManager.Instance.AddDeath();
         isDead = true;
         GameObject sphere = Instantiate(reviveSphere, this.transform);
         sphere.GetComponent<Revive>().SetPlayerStats(this);
@@ -163,6 +164,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Revive()
     {
+        RunDataManager.Instance.AddRevive();
         isDead = false;
     }
 }
