@@ -175,8 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIChoosePlayers
   p1Text: {fileID: 338700821}
   p2Text: {fileID: 1333979429}
-  notReadyText: 
-  readyText: 
+  notReadyText: Not ready
+  readyText: Ready
   p1Image: {fileID: 1927016661}
   p1NotReady: {fileID: 0}
   p1Ready: {fileID: 0}
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   separationLine: {fileID: 1901978537}
   xpBarPanel: {fileID: 1293763898}
   levelUpPanel: {fileID: 163979062}
-  choosePlayerPanel: {fileID: 0}
+  choosePlayerPanel: {fileID: 39263683}
 --- !u!1 &1293763898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2152,10 @@ PrefabInstance:
     - target: {fileID: 7520864855241855329, guid: 6ff8d719f3718704096c956b9eb5780a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520864855241855329, guid: 6ff8d719f3718704096c956b9eb5780a, type: 3}
+      propertyPath: m_TagString
+      value: RewardPanelP2
       objectReference: {fileID: 0}
     - target: {fileID: 8604072337007560885, guid: 6ff8d719f3718704096c956b9eb5780a, type: 3}
       propertyPath: m_Enabled
@@ -3325,6 +3329,10 @@ PrefabInstance:
     - target: {fileID: 7520864855241855329, guid: 6ff8d719f3718704096c956b9eb5780a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520864855241855329, guid: 6ff8d719f3718704096c956b9eb5780a, type: 3}
+      propertyPath: m_TagString
+      value: RewardPanelP1
       objectReference: {fileID: 0}
     - target: {fileID: 8604072337007560885, guid: 6ff8d719f3718704096c956b9eb5780a, type: 3}
       propertyPath: m_Enabled

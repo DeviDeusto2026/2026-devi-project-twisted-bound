@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Warrior
   - Wizard
+  - RewardPanelP1
+  - RewardPanelP2
   layers:
   - Default
   - TransparentFX

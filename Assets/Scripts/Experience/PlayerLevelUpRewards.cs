@@ -15,10 +15,10 @@ public class PlayerLevelUpRewards : MonoBehaviour
     public bool RewardChoosen { get => rewardSelector.rewardChoosen; }
 
 
-    private void Start()
+    public void OnGameStart()
     {
         player = this.gameObject;
-        rewardSelector = GameObject.Find(selectorName).GetComponent<RewardSelector>();
+        rewardSelector = GameObject.FindGameObjectWithTag(selectorName).GetComponent<RewardSelector>();
     }
 
     public void PrepareNewRewards()
