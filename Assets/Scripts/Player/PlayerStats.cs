@@ -150,9 +150,8 @@ public class PlayerStats : MonoBehaviour
         if (trueDamage < 1) trueDamage = 1;
 
         this.healthActual -= trueDamage;
-        Debug.Log($"Vida actual: {healthActual}");
 
-        if (healthActual <= 0) Die();
+        if (healthActual <= 0 && !isDead) Die();
     }
     public void Die()
     {

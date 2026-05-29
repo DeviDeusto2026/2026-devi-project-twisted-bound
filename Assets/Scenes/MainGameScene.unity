@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85cf855996be2640b5959cf0a9e5c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 1411421251927306308, guid: bdcfb5c1726ca7a4da749807b1ea0a9c, type: 3}
   enemyAttackMultiplier: 5
   enemyHealthMultiplier: 2
   enemyVelocityMultiplier: 0.2
@@ -1930,7 +1930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c498744254a094fb848f7c7cecd0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunDataManager
-  finishScene: 
+  finishScene: FinishScene
 --- !u!4 &1541451455
 Transform:
   m_ObjectHideFlags: 0
