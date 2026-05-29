@@ -12,7 +12,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
     [SerializeField] private string selectorName;
     private RewardSelector rewardSelector;
 
-    public bool RewardChoosen { get => rewardSelector.rewardChoosen; }
+    public bool RewardChoosen { get => rewardSelector.rewardChosen; }
 
 
     public void OnGameStart()
@@ -27,6 +27,8 @@ public class PlayerLevelUpRewards : MonoBehaviour
                 break;
             }
         }
+
+        rewardSelector.SetPlayer(player);
     }
 
     public void PrepareNewRewards()
@@ -45,7 +47,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
 
     private List<Ability> CalculateAbilityPool()
     {
-        AbilityManager abilityManager = player.GetComponent<AbilityManager>();
+        AbilityManager abilityManager = player.GetComponentInChildren<AbilityManager>();
 
         if(abilityManager == null) return null;
 
@@ -72,7 +74,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
     private List<Item> CalculateItemPool()
     {
         
-        ItemManager itemManager = player.GetComponent<ItemManager>();
+        ItemManager itemManager = player.GetComponentInChildren<ItemManager>();
 
         if (itemManager == null) return null;
         

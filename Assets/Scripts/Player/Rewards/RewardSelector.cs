@@ -10,21 +10,22 @@ public class RewardSelector : MonoBehaviour
     [SerializeField] private List<RewardButton> buttonList;
     private List<IReward> rewardList;
 
-    public bool rewardChoosen = false;
+    public bool rewardChosen = false;
+
+    private MultiplayerEventSystem eventSystem;
     
 
     public void SetPlayer(GameObject player)
     {
-        MultiplayerEventSystem eventSystem = player.GetComponentInChildren<MultiplayerEventSystem>();
+        eventSystem = player.GetComponentInChildren<MultiplayerEventSystem>();
         eventSystem.playerRoot = this.gameObject;
-        eventSystem.firstSelectedGameObject = buttonList[0].gameObject;
     }
 
 
     public void SetNewRewards(List<IReward> rewards)
     {
         rewardList = rewards;
-        rewardChoosen = false;
+        rewardChosen = false;
 
         for(int i = 0; i<buttonList.Count; i++)
         {
@@ -36,15 +37,17 @@ public class RewardSelector : MonoBehaviour
             rb.SetImage(reward.GetImagePath());
             rb.SetDescription(reward.GetDescription());
         }
+        
+        eventSystem.SetSelectedGameObject(buttonList[0].gameObject);
     }
 
     public void ChooseReward(int option)
     {
-        if (rewardChoosen) return;
+        if (rewardChosen) return;
         
         IReward reward = rewardList[option];
         reward.LevelUp();
-        rewardChoosen = true;
+        rewardChosen = true;
 
         ColorBlock buttonColor = ColorBlock.defaultColorBlock;
         buttonColor.disabledColor = Color.green;

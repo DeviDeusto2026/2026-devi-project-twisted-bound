@@ -188,6 +188,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 119011521373752594}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1128998350078762752}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 790942337802840346}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -198,6 +222,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 972779550598319311, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
   m_PrefabInstance: {fileID: 3423707364540069877}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8318054370534848642 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+  m_PrefabInstance: {fileID: 3423707364540069877}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &8599388997853580009 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6400838888008170780, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
@@ -301,6 +336,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 8318054370534848642}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 790942337802840346}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -317,6 +372,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c7e1e401751874f85d4648199a4270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RewardButton
+--- !u!114 &1128998350078762752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+  m_PrefabInstance: {fileID: 6001006718587474039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!224 &6829667088799292600 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 972779550598319311, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
@@ -414,11 +480,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 8318054370534848642}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 790942337802840346}
+    - target: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseReward
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+--- !u!114 &119011521373752594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6695966251964026743, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}
+  m_PrefabInstance: {fileID: 6722195896273502821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &404849542023036793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6400838888008170780, guid: 48c638c524f507a48b7d10bd24858ceb, type: 3}

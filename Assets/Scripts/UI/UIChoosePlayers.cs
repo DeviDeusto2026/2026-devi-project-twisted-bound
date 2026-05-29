@@ -73,7 +73,9 @@ public class UIChoosePlayers : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
-
+        
+        UIManager.Instance.StartGame();
+        
         GameObject[] gameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
         foreach (GameObject gO in gameObjects)
         {
@@ -81,7 +83,7 @@ public class UIChoosePlayers : MonoBehaviour
         }
 
 
-        UIManager.Instance.StartGame();
+        
     }
 
 

@@ -20,13 +20,16 @@ public class ExperienceBar : MonoBehaviour
 
     public void OnGameStart()
     {
+        Debug.Log($"He pasado por aqui #332");
         player1 = GameObject.FindWithTag(tagPlayer1).GetComponent<PlayerLevelUpRewards>();
         player2 = GameObject.FindWithTag(tagPlayer2).GetComponent<PlayerLevelUpRewards>();
+        Debug.Log($"Tag de player1 es {player1.tag} y la del player2 es {player2.tag}");
     }
 
     private void Start()
     {
         slider = this.gameObject.GetComponent<Slider>();
+        Debug.Log($"El slider {slider.name} encontrado y tiene el value a {slider.value}");
     }
 
 
