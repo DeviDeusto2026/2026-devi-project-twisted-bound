@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
-
+    [Header("UI Panels")]
     [SerializeField] private GameObject separationLine;
     [SerializeField] private GameObject xpBarPanel;
     [SerializeField] private GameObject levelUpPanel;
     [SerializeField] private GameObject choosePlayerPanel;
+
+    [Header("Event System")]
+    [SerializeField] private GameObject eventSystem;
 
 
 
@@ -42,6 +46,8 @@ public class UIManager : MonoBehaviour
         xpBarPanel.SetActive(false);
         levelUpPanel.SetActive(false);
         choosePlayerPanel.SetActive(true);
+
+        eventSystem.SetActive(true);
     }
 
     public void StartGame()
@@ -50,6 +56,7 @@ public class UIManager : MonoBehaviour
         xpBarPanel.SetActive(true);
         separationLine.SetActive(true);
 
+        eventSystem.SetActive(false);
     }
 
 }
