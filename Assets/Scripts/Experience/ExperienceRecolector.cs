@@ -10,7 +10,7 @@ public class ExperienceRecolector : MonoBehaviour
 
     private void Awake()
     {   
-        experienceBar = FindAnyObjectByType<ExperienceBar>();
+        experienceBar = FindAnyObjectByType<ExperienceBar>(FindObjectsInactive.Include);
         playerStats = this.gameObject.GetComponentInParent<PlayerStats>();
     }
 
