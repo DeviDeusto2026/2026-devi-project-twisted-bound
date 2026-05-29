@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   isDead: 0
+  healthRegenTimerMax: 5
   reviveSphere: {fileID: 1398543653470995729, guid: 7379ef2f28feba24a81eca30611b4909, type: 3}
 --- !u!114 &3914714998428173017
 MonoBehaviour:
@@ -731,6 +732,10 @@ PrefabInstance:
     - target: {fileID: 4411167263687872453, guid: e8c546d83253c344c8de669d2ae84357, type: 3}
       propertyPath: m_Name
       value: GreatswordAbility
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464800473375761415, guid: e8c546d83253c344c8de669d2ae84357, type: 3}
+      propertyPath: level
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

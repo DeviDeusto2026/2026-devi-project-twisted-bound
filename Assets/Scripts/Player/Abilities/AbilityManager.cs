@@ -6,6 +6,13 @@ public class AbilityManager : MonoBehaviour
 {
     private PlayerStats playerStats;
     private List<Ability> abilityList = new List<Ability>();
+    bool gameStarted = false;
+
+    public void OnGameStart()
+    {
+        gameStarted = true;
+    }
+
 
     private void Start()
     {
@@ -16,6 +23,7 @@ public class AbilityManager : MonoBehaviour
 
     void Update()
     {
+        if (!gameStarted) return;
         if (playerStats.isDead) return;
         ActivateAbilities();
     }
@@ -24,7 +32,6 @@ public class AbilityManager : MonoBehaviour
     {
         foreach(Ability ability in abilityList){
             ability.SetPlayer(playerStats);
-            //ability.SetLevel(0);
         }
     }
 
