@@ -8,7 +8,7 @@ public class ConeOfColdAbility : Ability
     [SerializeField] float[] damage;
     [SerializeField] float[] slow;
     [SerializeField] float durationSlow;
-    [SerializeField] float force = 500;
+    [SerializeField] float speed = 20;
 
 
     private float GetDamage()
@@ -28,7 +28,7 @@ public class ConeOfColdAbility : Ability
     {
         Transform playerTransform = this.playerStats.transform;
         Vector3 position = playerTransform.position;
-        position += playerTransform.forward;
+        position += playerTransform.forward * 2;
 
         GameObject newProjectile = Instantiate(projectile, position, playerTransform.rotation);
         newProjectile.GetComponent<AbilityAttack>().SetAttack(GetDamage());
@@ -36,6 +36,6 @@ public class ConeOfColdAbility : Ability
         List<Effect> effectList = new List<Effect>();
         effectList.Add(GetEffect());
         newProjectile.GetComponent<AbilityEffect>().SetEffects(effectList);
-        newProjectile.GetComponent<Rigidbody>().AddForce(playerTransform.forward * force);
+        newProjectile.GetComponent<ConeOfColdProjectile>().SetSpeed(speed);
     }
 }

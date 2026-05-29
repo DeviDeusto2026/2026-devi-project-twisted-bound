@@ -1322,6 +1322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConeOfColdAbility
       objectReference: {fileID: 0}
+    - target: {fileID: 5656958665153307048, guid: a6e7aa9ebeb6b7640a679720dc7f7e91, type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6858261141173106485, guid: a6e7aa9ebeb6b7640a679720dc7f7e91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.31488
