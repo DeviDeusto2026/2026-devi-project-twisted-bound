@@ -53,7 +53,8 @@ public class WaveManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeToNextWave = timeBetweenWaves;
+        //timeToNextWave = timeBetweenWaves
+        timeToNextWave = 1;
 
         Transform[] transforms = spawners.GetComponentsInChildren<Transform>();
         spawnPoints = new List<Vector3>(transforms.Length);
@@ -79,8 +80,8 @@ public class WaveManager : MonoBehaviour
 
         if (timeToSpawnChange <= 0)
         {
-            ChangePossibleSpawns();
             ChangeSpawnAmount();
+            ChangePossibleSpawns();
             timeToSpawnChange = timeBetweenSpawnChange;
         }
     }
@@ -90,7 +91,6 @@ public class WaveManager : MonoBehaviour
         possibleSpawns.Clear();
 
         int possibleSpawnAmount = (possibleSpawnMaxAmount <= spawnPoints.Count) ? possibleSpawnMaxAmount : spawnPoints.Count;
-
         while (possibleSpawns.Count < possibleSpawnAmount)
         {
             Vector3 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
@@ -109,19 +109,20 @@ public class WaveManager : MonoBehaviour
         float clockMinute = Mathf.Floor(clock / 60);
 
         enemySpawnAmount = Mathf.FloorToInt(enemySpawnBaseAmount + enemySpawnAmountIncrease * clockMinute);
-        possibleSpawnMaxAmount =  Mathf.FloorToInt(possibleSpawnBaseMaxAmount + possibleSpawnMaxAmountIncrease * clockMinute);
-
+        possibleSpawnMaxAmount = Mathf.FloorToInt(possibleSpawnBaseMaxAmount + possibleSpawnMaxAmountIncrease * clockMinute);
     }
 
 
     private IEnumerator SpawnEnemyWave()
     {
+        List<Vector3> copyPossibleSpawns = new List<Vector3>(possibleSpawns);
+
         //Bucle para todos los enemigos para spawnear
         for (int i=0; i<enemySpawnAmount; i++)
         {
             //Elegir punto de spawn
-            int spanwIndex = Random.Range(0,possibleSpawns.Count);
-            Vector3 spawnerPosition = possibleSpawns[spanwIndex];
+            int spanwIndex = Random.Range(0,copyPossibleSpawns.Count);
+            Vector3 spawnerPosition = copyPossibleSpawns[spanwIndex];
             Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
 
             //Spawnearlo con esa posicion
