@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class RewardSelector : MonoBehaviour
@@ -11,6 +12,14 @@ public class RewardSelector : MonoBehaviour
 
     public bool rewardChoosen = false;
     
+
+    public void SetPlayer(GameObject player)
+    {
+        MultiplayerEventSystem eventSystem = player.GetComponentInChildren<MultiplayerEventSystem>();
+        eventSystem.playerRoot = this.gameObject;
+        eventSystem.firstSelectedGameObject = buttonList[0].gameObject;
+    }
+
 
     public void SetNewRewards(List<IReward> rewards)
     {
