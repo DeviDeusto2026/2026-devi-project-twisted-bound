@@ -7,7 +7,7 @@ public class MagicMissileAbility : Ability
     [SerializeField] private float[] damage;
     [SerializeField] private float timeBetweenHits;
     [SerializeField] private int[] numberOfProjectiles;
-    private float force = 500;
+    [SerializeField] private float speed = 10;
     private float GetDamage()
     {
         return damage[level - 1] * playerStats.GetAttack();
@@ -34,6 +34,6 @@ public class MagicMissileAbility : Ability
         GameObject newProjectile = Instantiate(projectile, position, playerTransform.rotation);
         newProjectile.GetComponent<AbilityAttack>().SetAttack(GetDamage());
 
-    newProjectile.GetComponent<Rigidbody>().AddForce(playerTransform.forward* force);
+        newProjectile.GetComponent<MagicMissileProjectile>().SetSpeed(speed);
     }
 }
