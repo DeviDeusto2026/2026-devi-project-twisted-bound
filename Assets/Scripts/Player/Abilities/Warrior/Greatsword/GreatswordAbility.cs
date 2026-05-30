@@ -5,8 +5,11 @@ public class GreatswordAbility : Ability
     [SerializeField] private float[] damage;
     [SerializeField] private int[] numberOfHits;
     [SerializeField] private float timeBetweenHits;
-    [SerializeField] private float greatswordLifetime;
+    //[SerializeField] private float greatswordLifetime;
     [SerializeField] private GameObject greatsword;
+    [SerializeField] private float maxAngle;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] private float distanceFromPlayer;
 
     public float GetDamage()
     {
@@ -33,10 +36,12 @@ public class GreatswordAbility : Ability
         GameObject newGreatsword = Instantiate(greatsword);
         
         newGreatsword.GetComponent<AbilityAttack>().SetAttack(GetDamage());
-        newGreatsword.GetComponent<Greatsword>().lifetime = greatswordLifetime;
-        
-        newGreatsword.transform.position = playerStats.transform.position + new Vector3(playerStats.transform.forward.x * newGreatsword.transform.localScale.z / 2, 0, playerStats.transform.forward.x * newGreatsword.transform.localScale.z / 2);
-        newGreatsword.transform.LookAt(playerStats.transform);
+
+        Greatsword gs = newGreatsword.GetComponent<Greatsword>();
+        gs.SetPlayer(this.playerStats);
+        gs.SetMaxAngle(maxAngle);
+        gs.SetDistanceFromPlayer(distanceFromPlayer);
+        gs.SetRotationSpeed(rotationSpeed);
     }
 
 }
