@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54e4e53565404e4b9c8bf8bd35ab071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GreatswordAbility
+  abilityName: 
   level: 0
   cooldown: 5
+  imagePath: 
+  description: 
   damage:
   - 10
   - 10
@@ -56,5 +59,7 @@ MonoBehaviour:
   - 20
   numberOfHits: 01000000020000000200000002000000030000000300000003000000
   timeBetweenHits: 0.2
-  greatswordLifetime: 0.1
   greatsword: {fileID: 191069691932219388, guid: 7c5022019cf2a114daf7c9fc1a13a9e2, type: 3}
+  maxAngle: 90
+  rotationSpeed: 180
+  distanceFromPlayer: 5
