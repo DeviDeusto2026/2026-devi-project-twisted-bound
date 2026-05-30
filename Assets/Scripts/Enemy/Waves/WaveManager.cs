@@ -53,7 +53,6 @@ public class WaveManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //timeToNextWave = timeBetweenWaves
         timeToNextWave = 1;
 
         Transform[] transforms = spawners.GetComponentsInChildren<Transform>();
@@ -84,6 +83,11 @@ public class WaveManager : MonoBehaviour
             ChangePossibleSpawns();
             timeToSpawnChange = timeBetweenSpawnChange;
         }
+    }
+
+    public float GetClock()
+    {
+        return this.clock;
     }
 
     private void ChangePossibleSpawns()
@@ -157,5 +161,10 @@ public class WaveManager : MonoBehaviour
         //Assign players
         EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
         enemyMovement.SetPlayers(player1, player2);
+    }
+
+    public void OnGameFinish()
+    {
+        RunDataManager.Instance.SetClock(clock);
     }
 }

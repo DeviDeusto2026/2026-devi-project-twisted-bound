@@ -19,23 +19,25 @@ public class EnemyHealth : MonoBehaviour
 
         if (abilityAttack == null) return;
 
-        SufferAttack(abilityAttack.GetAttack());
+        SufferAttack(abilityAttack.GetAttack(), abilityAttack.playerTag);
 
     }
 
-    private void SufferAttack(float attack)
+    private void SufferAttack(float attack, string playerTag)
     {
         enemyStats.Health -= attack;
 
         if (enemyStats.Health <= 0)
         {
-            Die();
+            Die(playerTag);
         }
     }
 
 
-    private void Die()
+    private void Die(string playerTag)
     {
+        RunDataManager.Instance.AddKill(playerTag);
+
         //Hacer cosas antes de morir (soltar experiencia, ...)
         GameObject xpOrb = Instantiate(xpOrbPrefab);
         xpOrb.transform.position = this.transform.position;

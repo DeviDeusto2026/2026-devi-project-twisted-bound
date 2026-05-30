@@ -4,6 +4,8 @@ public class AbilityAttack : MonoBehaviour
 {
     [SerializeField]
     private float attack;
+    public string playerTag; 
+
     public float GetAttack()
     {
         return attack;

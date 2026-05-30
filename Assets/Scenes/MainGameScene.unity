@@ -1931,6 +1931,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunDataManager
   finishScene: FinishScene
+  runData: {fileID: 0}
+  tagPlayer1: Warrior
+  tagPlayer2: Wizard
 --- !u!4 &1541451455
 Transform:
   m_ObjectHideFlags: 0

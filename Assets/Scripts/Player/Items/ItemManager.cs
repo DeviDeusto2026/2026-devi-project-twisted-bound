@@ -49,4 +49,9 @@ public class ItemManager : MonoBehaviour
         return this.itemList;
     }
 
+    public void OnGameFinish()
+    {
+        RunDataManager.Instance.SetItems(itemList, this.transform.parent.tag);
+    }
+
 }
