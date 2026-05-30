@@ -153,6 +153,8 @@ MonoBehaviour:
   rewardName: {fileID: 1606107783742050396}
   rewardImage: {fileID: 4138280934510926421}
   description: {fileID: 6575931918155409833}
+  chosenColor: {r: 0.35283017, g: 1, b: 0.35283017, a: 1}
+  notChosenColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0}
 --- !u!1 &1603457125538833378
 GameObject:
   m_ObjectHideFlags: 0

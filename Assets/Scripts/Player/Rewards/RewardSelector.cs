@@ -27,10 +27,13 @@ public class RewardSelector : MonoBehaviour
         rewardList = rewards;
         rewardChosen = false;
 
-        for(int i = 0; i<buttonList.Count; i++)
+
+        for (int i = 0; i<buttonList.Count; i++)
         {
             RewardButton rb = buttonList[i];
             IReward reward = rewardList[i];
+
+            rb.SetInteractable(true);
 
             rb.SetLevel(reward.GetLevel());
             rb.SetName(reward.GetName());
@@ -49,13 +52,13 @@ public class RewardSelector : MonoBehaviour
         reward.LevelUp();
         rewardChosen = true;
 
-        ColorBlock buttonColor = ColorBlock.defaultColorBlock;
-        buttonColor.disabledColor = Color.green;
-        buttonList[option].SetButtonColor(buttonColor);
-
-        foreach (RewardButton rb in buttonList)
+        for (int i = 0; i < buttonList.Count; i++)
         {
+            RewardButton rb = buttonList[i];
             rb.SetInteractable(false);
+
+            RewardButton.DisabledColor disabledColor = (i == option) ? RewardButton.DisabledColor.ChosenColor : RewardButton.DisabledColor.NotChosenColor;
+            rb.SetDisabledColor(disabledColor);
         }
 
 
