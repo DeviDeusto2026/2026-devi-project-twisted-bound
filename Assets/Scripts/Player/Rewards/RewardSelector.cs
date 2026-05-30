@@ -60,7 +60,5 @@ public class RewardSelector : MonoBehaviour
             RewardButton.DisabledColor disabledColor = (i == option) ? RewardButton.DisabledColor.ChosenColor : RewardButton.DisabledColor.NotChosenColor;
             rb.SetDisabledColor(disabledColor);
         }
-
-
     }
 }

@@ -1013,13 +1013,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1293763899}
     m_Modifications:
+    - target: {fileID: 880100080014131079, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045064744186134898, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1374713329402567479, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1374713329402567479, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3000052637354267740, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
       propertyPath: m_Name
       value: XpBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000052637354267740, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4698253709175770374, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
       propertyPath: m_Pivot.x
@@ -1123,6 +1139,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5342194917505115749, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6579144922524477786, guid: 933de49c7d3535141b4dd0b234b37bed, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
