@@ -4,10 +4,15 @@ using UnityEngine.UI;
 
 public class RewardButton : MonoBehaviour
 {
+    [Header("Reward information")]
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text rewardName;
     [SerializeField] private Image rewardImage;
     [SerializeField] private TMP_Text description;
+
+    [Header("Colors")]
+    [SerializeField, Tooltip("The color for the button when it's chosen as the reward")] private Color chosenColor;
+    [SerializeField, Tooltip("The color for the button when it's NOT chosen as the reward")] private Color notChosenColor;
 
     private Button button;
 
@@ -43,8 +48,17 @@ public class RewardButton : MonoBehaviour
         button.interactable = interactable;
     }
 
-    public void SetButtonColor(ColorBlock color)
+
+    public enum DisabledColor
     {
-        button.colors = color;
+        ChosenColor, NotChosenColor
+    }
+
+
+    public void SetDisabledColor(DisabledColor disabledColor)
+    {
+        ColorBlock cb = button.colors;
+        cb.disabledColor = (disabledColor == DisabledColor.ChosenColor) ? chosenColor : notChosenColor;
+        button.colors = cb;
     }
 }
