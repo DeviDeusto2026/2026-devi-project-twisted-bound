@@ -53,7 +53,7 @@ public class Greatsword : MonoBehaviour
 
         float startAngle = -maxAngle / 2;
         this.gameObject.transform.RotateAround(player.transform.position, Vector3.up, startAngle);
-        this.transform.rotation = Quaternion.Euler(0, 0, 0);
+        this.transform.rotation = player.transform.rotation;
         this.transform.Rotate(0, startAngle, 0);
     }
 }
