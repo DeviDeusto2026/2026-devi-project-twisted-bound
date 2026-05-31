@@ -12,10 +12,12 @@ public abstract class Ability : MonoBehaviour, IReward
     protected PlayerStats playerStats;
     [SerializeField] protected string imagePath;
     [SerializeField] protected string description;
+    [SerializeField] protected AudioSource audioSource;
 
     private void Start()
     {
         Invoke(nameof(Abilitate), cooldown);
+        this.audioSource = this.GetComponentInChildren<AudioSource>();
     }
 
     public void TryActivate()
@@ -23,6 +25,7 @@ public abstract class Ability : MonoBehaviour, IReward
         if (inCooldown) return;
 
         Activate();
+        if(audioSource != null) audioSource.Play();
         inCooldown = true;
         Invoke(nameof(Abilitate), GetCooldown());
     }

@@ -6,10 +6,12 @@ public class EnemyHealth : MonoBehaviour
     private EnemyStats enemyStats;
 
     [SerializeField] private GameObject xpOrbPrefab;
+    AudioSource audioSource;
 
     private void Start()
     {
         enemyStats = this.gameObject.GetComponent<EnemyStats>();
+        audioSource = GetComponentInChildren<AudioSource>();
     }
 
 
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void SufferAttack(float attack, string playerTag)
     {
+        audioSource.Play();
         enemyStats.Health -= attack;
 
         if (enemyStats.Health <= 0)

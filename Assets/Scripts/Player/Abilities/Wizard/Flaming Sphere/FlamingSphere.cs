@@ -31,12 +31,16 @@ public class FlamingSphere : MonoBehaviour
     void Start()
     {
         this.transform.position = player.transform.position + new Vector3(0, 0, distanceFromPlayer);
+        this.transform.rotation = player.transform.rotation;
+        this.transform.Rotate(0, 0, 0);
         Destroy(this.gameObject, sphereLifetime);
     }
 
     private void LateUpdate()
     {
         Vector3 position = player.transform.position + new Vector3(0, 0, distanceFromPlayer);
+        this.transform.rotation = player.transform.rotation;
+        this.transform.Rotate(0, 0, 0);
 
         this.transform.position = position;
         this.gameObject.transform.RotateAround(player.transform.position, Vector3.up, angle);
