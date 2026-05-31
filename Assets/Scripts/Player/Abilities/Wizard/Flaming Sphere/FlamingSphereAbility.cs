@@ -24,7 +24,6 @@ public class FlamingSphereAbility : Ability
 
     public override void Activate()
     {
-        Debug.Log("He sido activada");
         Transform playerTransform = this.playerStats.transform;
         Vector3 position = playerTransform.position;
         position += playerTransform.forward;
