@@ -32,7 +32,10 @@ public class DragonClawsAbility : Ability
     {
         GameObject newClaw = Instantiate(claw);
 
-        newClaw.GetComponent<AbilityAttack>().SetAttack(GetDamage());
+        AbilityAttack aa = newClaw.GetComponent<AbilityAttack>();
+        aa.SetAttack(GetDamage());
+        aa.playerTag = playerStats.gameObject.tag;
+
         newClaw.GetComponent<DragonClaws>().lifetime = clawLifetime;
 
         newClaw.transform.position = playerStats.transform.position + playerStats.transform.forward* (claw.transform.localScale.z/2);
