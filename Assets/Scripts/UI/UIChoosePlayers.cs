@@ -15,12 +15,10 @@ public class UIChoosePlayers : MonoBehaviour
 
     [Header("Player 1 images")]
     [SerializeField] private Image p1Image;
-    [SerializeField] private Sprite p1NotReady;
     [SerializeField] private Sprite p1Ready;
     
     [Header("Player 2 images")]
     [SerializeField] private Image p2Image;
-    [SerializeField] private Sprite p2NotReady;
     [SerializeField] private Sprite p2Ready;
 
     [Header("Button panel")]
@@ -50,20 +48,22 @@ public class UIChoosePlayers : MonoBehaviour
         p1Text.text = "P1 " + notReadyText;
         p2Text.text = "P2 " + notReadyText;
 
-        p1Image.sprite = p1NotReady;
-        p2Image.sprite = p2NotReady;
+        p1Image.enabled = false;
+        p2Image.enabled = false;
 
         buttonPanel.SetActive(false);
 
         yield return new WaitUntil(() => joinerManager.player1Joined);
 
         p1Text.text = "P1 " + readyText;
+        p1Image.enabled = true;
         p1Image.sprite = p1Ready;
 
 
         yield return new WaitUntil(() => joinerManager.player2Joined);
 
         p2Text.text = "P2 " + readyText;
+        p2Image.enabled = true;
         p2Image.sprite = p2Ready;
 
         buttonPanel.SetActive(true);

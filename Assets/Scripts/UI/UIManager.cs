@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
         separationLine.SetActive(true);
         levelUpPanel.SetActive(false);
         XpBarSetActive(true);
-        hudPanel.SetActive(false);
+        hudPanel.SetActive(true);
     }
 
 
