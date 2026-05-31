@@ -48,5 +48,5 @@ MonoBehaviour:
   stat: 1
   level: 0
   power: 0.15
-  imagePath: 'HeadbandOfVastIntelligence '
+  imagePath: HeadbandOfVastIntelligence
   description: Increases damage
