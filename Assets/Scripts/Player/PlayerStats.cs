@@ -89,7 +89,7 @@ public class PlayerStats : MonoBehaviour
 
     public float GetHealthMax()
     {
-        return healthMax * (1 + itemManager.GetStat(Stat.HEALTH));
+        return healthMax + (1 + itemManager.GetStat(Stat.HEALTH));
     }
 
     public float GetHealthActual()
