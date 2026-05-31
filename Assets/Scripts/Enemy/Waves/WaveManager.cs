@@ -59,6 +59,7 @@ public class WaveManager : MonoBehaviour
         spawnPoints = new List<Vector3>(transforms.Length);
         foreach (Transform t in transforms)
         {
+            if (t.Equals(spawners.transform)) continue;
             spawnPoints.Add(t.position);
         }
     }
@@ -127,7 +128,7 @@ public class WaveManager : MonoBehaviour
             //Elegir punto de spawn
             int spanwIndex = Random.Range(0,copyPossibleSpawns.Count);
             Vector3 spawnerPosition = copyPossibleSpawns[spanwIndex];
-            Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+            Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f, 3f));
 
             //Spawnearlo con esa posicion
             SpawnEnemy(spawnPosition);
