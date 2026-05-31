@@ -35,13 +35,12 @@ public class PlayerStats : MonoBehaviour
 
     Dictionary<EnemyAttack, float> enemyDict = new Dictionary<EnemyAttack, float>();
 
+    private HealthBar healthBar;
+    
     [SerializeField] AudioSource audioSourceDamage;
     [SerializeField] AudioSource audioSourceDeath;
     [SerializeField] AudioSource audioSourceRevive;
 
-
-    private HealthBar healthBar;
-    
 
     private void Awake()
     { 
