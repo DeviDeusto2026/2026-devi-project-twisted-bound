@@ -47,6 +47,7 @@ public class FinishMenuManager : MonoBehaviour
         string abilitiesText = "Abilities ";
         foreach (Ability ability in runData.abilityListPlayer1)
         {
+            if (ability.GetLevel() < 1) continue;
             abilitiesText += string.Format("%s: %d", ability.name, ability.GetLevel());
             abilitiesText += "\n";
         }
@@ -56,6 +57,7 @@ public class FinishMenuManager : MonoBehaviour
         string itemText = "Items: ";
         foreach (Item item in runData.itemListPlayer1)
         {
+            if (item.GetLevel() < 1) continue;
             itemText += string.Format("%s: %d", item.name, item.GetLevel());
             itemText += "\n";
         }
