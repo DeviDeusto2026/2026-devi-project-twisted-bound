@@ -111,7 +111,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1063142538343116962
 NavMeshObstacle:
@@ -467,7 +467,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &3885708998787084089
 NavMeshObstacle:
@@ -596,7 +596,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1801293609677443884
 NavMeshObstacle:
@@ -797,7 +797,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &8933332635829324211
 NavMeshObstacle:
@@ -926,7 +926,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &7767089386388826264
 NavMeshObstacle:
@@ -1145,7 +1145,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &3064554684714025585
 NavMeshObstacle:
@@ -1274,7 +1274,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &7499002952804487387
 NavMeshObstacle:
@@ -1561,7 +1561,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &6754666301167233029
 NavMeshObstacle:
@@ -1690,7 +1690,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &870366026787244228
 NavMeshObstacle:
@@ -1819,7 +1819,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &7579101237588984491
 NavMeshObstacle:
@@ -2184,7 +2184,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1254269527822951448
 NavMeshObstacle:
@@ -2615,7 +2615,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &1189957356880465174
 NavMeshObstacle:
@@ -2776,7 +2776,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.05, y: 1, z: 1.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!208 &2306520204441126703
 NavMeshObstacle:
