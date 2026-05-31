@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,28 @@ public class RunDataManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        ResetRunData();
     }
+
+    void ResetRunData()
+    {
+        runData.killCountPlayer1 = 0;
+        runData.killCountPlayer2 = 0;
+
+        runData.reviveCountPlayer1 = 0;
+        runData.reviveCountPlayer2 = 0;
+
+        runData.deathCountPlayer1 = 0;
+        runData.deathCountPlayer2 = 0;
+
+        runData.abilityListPlayer1 = null;
+        runData.abilityListPlayer2 = null;
+
+        runData.itemListPlayer1 = null;
+        runData.itemListPlayer2 = null;
+
+        runData.clock = 0;
+}
 
     public void AddDeath(string tag)
     {

@@ -165,5 +165,6 @@ public class PlayerStats : MonoBehaviour
     {
         RunDataManager.Instance.AddRevive(this.gameObject.tag);
         isDead = false;
+        this.healthActual = GetHealthMax() / 2;
     }
 }

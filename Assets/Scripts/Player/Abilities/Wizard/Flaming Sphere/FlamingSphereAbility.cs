@@ -30,7 +30,9 @@ public class FlamingSphereAbility : Ability
         position += playerTransform.forward;
 
         GameObject newSphere= Instantiate(flamingSphere, position, playerTransform.rotation);
-        newSphere.GetComponent<AbilityAttack>().SetAttack(GetDamage());
+        AbilityAttack aa = newSphere.GetComponent<AbilityAttack>();
+        aa.SetAttack(GetDamage());
+        aa.playerTag = playerStats.gameObject.tag;
 
         FlamingSphere fs = newSphere.GetComponent<FlamingSphere>();
         fs.SetDistanceFromPlayer(GetDistanceFromPlayer());

@@ -35,7 +35,9 @@ public class GreatswordAbility : Ability
     {
         GameObject newGreatsword = Instantiate(greatsword);
         
-        newGreatsword.GetComponent<AbilityAttack>().SetAttack(GetDamage());
+        AbilityAttack aa = newGreatsword.GetComponent<AbilityAttack>();
+        aa.SetAttack(GetDamage());
+        aa.playerTag = playerStats.gameObject.tag;
 
         Greatsword gs = newGreatsword.GetComponent<Greatsword>();
         gs.SetPlayer(this.playerStats);

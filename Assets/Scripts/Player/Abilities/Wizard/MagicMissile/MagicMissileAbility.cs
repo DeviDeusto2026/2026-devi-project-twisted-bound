@@ -32,7 +32,9 @@ public class MagicMissileAbility : Ability
         position += playerTransform.forward;
 
         GameObject newProjectile = Instantiate(projectile, position, playerTransform.rotation);
-        newProjectile.GetComponent<AbilityAttack>().SetAttack(GetDamage());
+        AbilityAttack aa = newProjectile.GetComponent<AbilityAttack>();
+        aa.SetAttack(GetDamage());
+        aa.playerTag = this.playerStats.gameObject.tag;
 
         newProjectile.GetComponent<MagicMissileProjectile>().SetSpeed(speed);
     }

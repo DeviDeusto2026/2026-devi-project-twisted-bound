@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
         player = GameObject.FindWithTag(playerTag);
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (player == null) return;
 

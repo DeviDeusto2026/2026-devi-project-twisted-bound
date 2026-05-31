@@ -31,7 +31,9 @@ public class ConeOfColdAbility : Ability
         position += playerTransform.forward * 2;
 
         GameObject newProjectile = Instantiate(projectile, position, playerTransform.rotation);
-        newProjectile.GetComponent<AbilityAttack>().SetAttack(GetDamage());
+        AbilityAttack aa = newProjectile.GetComponent<AbilityAttack>();
+        aa.SetAttack(GetDamage());
+        aa.playerTag = playerStats.gameObject.tag;
 
         List<Effect> effectList = new List<Effect>();
         effectList.Add(GetEffect());

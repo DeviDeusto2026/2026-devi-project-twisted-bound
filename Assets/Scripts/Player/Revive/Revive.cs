@@ -6,12 +6,12 @@ public class Revive : MonoBehaviour
     float reviveBar = 0;
     [SerializeField] float gain;
     [SerializeField] float lifeTime;
-    string targetTag;
+    public string targetTag;
     PlayerStats playerStats;
     
     private void Start()
     {
-        targetTag = (this.gameObject.tag == "Wizard")? "Warrior":"Wizard";
+        targetTag = (playerStats.gameObject.tag == "Wizard") ? "Warrior" : "Wizard";
         Destroy(this.gameObject, lifeTime);
     }
 
@@ -26,13 +26,13 @@ public class Revive : MonoBehaviour
 
         if (tag != targetTag) return;
 
-        reviveBar += gain;
+        reviveBar += gain * Time.deltaTime;
         CheckReviveBar();
     }
 
     void CheckReviveBar()
     {
-        Debug.Log($"Bar: {reviveBar}");
+        //Debug.Log($"Bar: {reviveBar}");
         if (reviveBar <= reviveBarMax) return;
 
         playerStats.Revive();
