@@ -39,7 +39,6 @@ public class PlayerLevelUpRewards : MonoBehaviour
         List<IReward> rewardPool = new List<IReward>();
         rewardPool.AddRange(abilityPool);
         rewardPool.AddRange(itemPool);
-        Debug.Log($"El size del reward es {rewardPool.Count}");
         List<IReward> rewards = CalculateReward(rewardPool);
 
         rewardSelector.SetNewRewards(rewards);
@@ -62,7 +61,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
             }
         }
 
-        if(leveledUpAbilities.Count() < maxAbilities)
+        if(leveledUpAbilities.Count < maxAbilities)
         {
             return abilityPool;
         } else
@@ -89,7 +88,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
             }
         }
 
-        if(leveledUpItems.Count() < maxItems)
+        if(leveledUpItems.Count < maxItems)
         {
             return itemPool;
         }
@@ -107,9 +106,7 @@ public class PlayerLevelUpRewards : MonoBehaviour
         while(rewardList.Count < listMaxSize)
         {
             
-            int random = Random.Range(0, pool.Count() - 1);
-            Debug.Log($"El random es {random}");
-            Debug.Log($"El size de la lista es {pool.Count}");
+            int random = Random.Range(0, pool.Count);
             IReward reward = pool[random];
 
             if (!rewardList.Contains(reward))

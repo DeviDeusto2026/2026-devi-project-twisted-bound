@@ -9,7 +9,7 @@ public class ExperienceBar : MonoBehaviour
 
     private const float constA = 8;
     private const float constB = -5;
-    private readonly float constC = Mathf.Exp((1 - constB) / constA);
+    private static readonly float constC = Mathf.Exp((1 - constB) / constA);
 
     [Header("Player")]
     [SerializeField] private PlayerLevelUpRewards player1;
@@ -20,16 +20,13 @@ public class ExperienceBar : MonoBehaviour
 
     public void OnGameStart()
     {
-        Debug.Log($"He pasado por aqui #332");
         player1 = GameObject.FindWithTag(tagPlayer1).GetComponent<PlayerLevelUpRewards>();
         player2 = GameObject.FindWithTag(tagPlayer2).GetComponent<PlayerLevelUpRewards>();
-        Debug.Log($"Tag de player1 es {player1.tag} y la del player2 es {player2.tag}");
     }
 
     private void Start()
     {
         slider = this.gameObject.GetComponent<Slider>();
-        Debug.Log($"El slider {slider.name} encontrado y tiene el value a {slider.value}");
     }
 
 
@@ -54,10 +51,9 @@ public class ExperienceBar : MonoBehaviour
 
         slider.value = newLevel - (int)newLevel;
 
-        if (Mathf.Floor(newLevel) < level) return;
+        if (Mathf.Floor(newLevel) <= level) return;
         
         StartCoroutine(LevelUp());
-        Debug.Log($"Chavales he vuelto");
     }
 
     private IEnumerator LevelUp()

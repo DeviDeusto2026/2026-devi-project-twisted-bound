@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ExperienceOrb : MonoBehaviour
 {
-    float experience;
+    [SerializeField] private float experience;
 
     public void SetExperience(float experience)
     {
