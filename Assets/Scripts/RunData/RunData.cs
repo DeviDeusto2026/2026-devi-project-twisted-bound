@@ -13,11 +13,11 @@ public class RunData : ScriptableObject
     public int deathCountPlayer1;
     public int deathCountPlayer2;
 
-    public List<Ability> abilityListPlayer1;
-    public List<Ability> abilityListPlayer2;
+    public List<AbilityData> abilityListPlayer1;
+    public List<AbilityData> abilityListPlayer2;
 
-    public List<Item> itemListPlayer1;
-    public List<Item> itemListPlayer2;
+    public List<AbilityData> itemListPlayer1;
+    public List<AbilityData> itemListPlayer2;
 
     public float clock;
 }
