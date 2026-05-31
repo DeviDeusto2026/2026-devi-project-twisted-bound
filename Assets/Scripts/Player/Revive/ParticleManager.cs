@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ParticleManager : MonoBehaviour
 {
-    [SerializeField] ParticleSystem particleSystem;
+    [SerializeField] ParticleSystem pSystem;
     [SerializeField] float timerMax;
     float timer;
 
@@ -19,7 +19,7 @@ public class ParticleManager : MonoBehaviour
         if (timer > 0) return;
 
         timer = timerMax;
-        particleSystem.Stop();
-        particleSystem.Play();
+        pSystem.Stop();
+        pSystem.Play();
     }
 }

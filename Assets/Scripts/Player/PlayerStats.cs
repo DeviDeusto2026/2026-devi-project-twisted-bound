@@ -6,9 +6,6 @@ public class PlayerStats : MonoBehaviour
 {
     private float healthMax = 100;
     
-    /// <summary>
-    /// Este no debe ser usado directamente
-    /// </summary>
     private float _healthActual;
     private float healthActual
     {

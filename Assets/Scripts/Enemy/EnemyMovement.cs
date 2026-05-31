@@ -21,7 +21,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         SearchTarget();
-        //Rotate();
         Move();
     }
 
@@ -38,32 +37,6 @@ public class EnemyMovement : MonoBehaviour
         this.player1 = player1.GetComponent<PlayerStats>();
         this.player2 = player2.GetComponent<PlayerStats>();
     }
-
-
-    //private void Rotate()
-    //{
-    //    Vector3 targetDirection = (target.transform.position - this.transform.position).normalized;
-
-    //    if (this.transform.forward == targetDirection) return;
-
-    //    float angle = Vector3.SignedAngle(this.transform.forward, targetDirection, Vector3.up);
-    //    diseredAngle = angle;
-    //    float maxAngle = Time.fixedDeltaTime * rotationSpeed;
-
-    //    if (Mathf.Abs(angle) > maxAngle)
-    //    {
-    //        angle = Mathf.Sign(angle) * maxAngle;
-    //    }
-
-    //    this.transform.Rotate(Vector3.up, angle);
-    //}
-
-    //private void Move()
-    //{
-    //    float speedModifier = 1 / ((Mathf.Abs(diseredAngle) / 36) + 1);
-    //    rb.linearVelocity = this.transform.forward * enemyStats.GetVelocity() * speedModifier;
-        
-    //}
 
 
     private void Move()

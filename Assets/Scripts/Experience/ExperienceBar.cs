@@ -64,32 +64,20 @@ public class ExperienceBar : MonoBehaviour
 
     private IEnumerator LevelUp()
     {
-        level++; //Hacer visible el nivel
+        level++;
 
-        //Detener el juego
         Time.timeScale = 0;
 
-        //Enseñar habilidades y que escogan una
         player1.PrepareNewRewards();
         player2.PrepareNewRewards();
         UIManager.Instance.OpenLevelUp();
-        //Transform[] gos = this.gameObject.GetComponentsInChildren<Transform>(true);
-        //foreach (Transform go in gos)
-        //{
-        //    if (transform.GetInstanceID() == go.GetInstanceID()) continue;
-        //    go.gameObject.SetActive(false);
-        //}
-
+        
         yield return new WaitUntil(() => player1.RewardChoosen);
         yield return new WaitUntil(() => player2.RewardChoosen);
 
-        //foreach (Transform go in gos)
-        //{
-        //    go.gameObject.SetActive(true);
-        //}
-        //Reanudar el juego
+       
         UIManager.Instance.CloseLevelUp();
 
-        Time.timeScale = 1; //Hacer que el tiempo suba proceduralmente
+        Time.timeScale = 1; 
     }
 }

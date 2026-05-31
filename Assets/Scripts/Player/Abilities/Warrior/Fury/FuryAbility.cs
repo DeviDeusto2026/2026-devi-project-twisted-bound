@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class FuryAbility : Ability
 {
-    //Esto le aumentará el daño, la regeneración de vida y la velocidad.Pero, reducirá su resistencia.
-    //Además, hará que dure más tiempo activa la furia.
-    //Duración de efectos: Para la duración de la furia activa.
 
     [SerializeField] float[] attack;
     [SerializeField] float[] healthRegen;

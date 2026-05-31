@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using TMPro;
-using UnityEditor.Timeline;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -135,15 +133,12 @@ public class WaveManager : MonoBehaviour
     {
         List<Vector3> copyPossibleSpawns = new List<Vector3>(possibleSpawns);
 
-        //Bucle para todos los enemigos para spawnear
         for (int i=0; i<enemySpawnAmount; i++)
         {
-            //Elegir punto de spawn
             int spanwIndex = Random.Range(0,copyPossibleSpawns.Count);
             Vector3 spawnerPosition = copyPossibleSpawns[spanwIndex];
             Vector3 spawnPosition = spawnerPosition + new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f, 3f));
 
-            //Spawnearlo con esa posicion
             SpawnEnemy(spawnPosition);
 
             yield return new WaitForSeconds(timeBetweenWaves/(2*enemySpawnAmount));
@@ -158,10 +153,9 @@ public class WaveManager : MonoBehaviour
     {
         GameObject enemy = Instantiate(enemyPrefab);
 
-        //Position
         enemy.transform.position = position;
 
-        //Stats
+
         EnemyStats enemyStats = enemy.GetComponent<EnemyStats>();
 
         float clockMinute = Mathf.Floor(clock / 60);
@@ -172,7 +166,7 @@ public class WaveManager : MonoBehaviour
             enemyStats.BaseVelocity + enemyVelocityMultiplier * clockMinute
         );
 
-        //Assign players
+
         EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
         enemyMovement.SetPlayers(player1, player2);
     }

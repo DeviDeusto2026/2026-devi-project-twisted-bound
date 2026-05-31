@@ -1,9 +1,7 @@
 
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.UI;
-using UnityEngine.UI;
 
 public class RewardSelector : MonoBehaviour
 {

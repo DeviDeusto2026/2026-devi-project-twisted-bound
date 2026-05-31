@@ -5,7 +5,6 @@ public class GreatswordAbility : Ability
     [SerializeField] private float[] damage;
     [SerializeField] private int[] numberOfHits;
     [SerializeField] private float timeBetweenHits;
-    //[SerializeField] private float greatswordLifetime;
     [SerializeField] private GameObject greatsword;
     [SerializeField] private float maxAngle;
     [SerializeField] float rotationSpeed;

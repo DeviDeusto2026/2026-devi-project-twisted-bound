@@ -1,6 +1,4 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -49,10 +47,6 @@ public class RunDataManager : MonoBehaviour
         {
             runData.deathCountPlayer2++;
         }
-        else
-        {
-            Debug.Log($"Se ha introducido una tag desconocida: {tag}");
-        }
 
         CheckDeath();
     }
@@ -66,10 +60,6 @@ public class RunDataManager : MonoBehaviour
         else if (tag == tagPlayer2)
         {
             runData.reviveCountPlayer2++;
-        }
-        else
-        {
-            Debug.Log($"Se ha introducido una tag desconocida: {tag}");
         }
     }
 
@@ -99,10 +89,6 @@ public class RunDataManager : MonoBehaviour
         {
             runData.killCountPlayer2++;
         }
-        else
-        {
-            Debug.Log($"Se ha introducido una tag desconocida: {tag}");
-        }
     }
 
     public void SetClock(float clock)
@@ -129,10 +115,6 @@ public class RunDataManager : MonoBehaviour
                 runData.abilityListPlayer2.Add(abilityData);
             }
         }
-        else
-        {
-            Debug.Log($"Se ha introducido una tag desconocida: {tag}");
-        }
     }
 
     public void SetItems(List<Item> itemList, string tag)
@@ -152,10 +134,6 @@ public class RunDataManager : MonoBehaviour
                 AbilityData abilityData = new AbilityData(item.GetName(), item.GetLevel());
                 runData.itemListPlayer2.Add(abilityData);
             }
-        }
-        else
-        {
-            Debug.Log($"Se ha introducido una tag desconocida: {tag}");
         }
     }
 

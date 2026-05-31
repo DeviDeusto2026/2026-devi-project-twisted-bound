@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.UI.Image;
 
 public class ExperienceRecolector : MonoBehaviour
 {
@@ -31,7 +29,7 @@ public class ExperienceRecolector : MonoBehaviour
 
 
         experienceBar.AddExperience(experienceOrb.GetExperience());
-        Destroy(other.gameObject, 1); //Hay que meterle sonidito y si me animo un animacion de recoleccion
+        Destroy(other.gameObject, 1);
     }
 
 }

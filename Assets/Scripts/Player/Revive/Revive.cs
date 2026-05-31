@@ -32,7 +32,6 @@ public class Revive : MonoBehaviour
 
     void CheckReviveBar()
     {
-        //Debug.Log($"Bar: {reviveBar}");
         if (reviveBar <= reviveBarMax) return;
 
         playerStats.Revive();

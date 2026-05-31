@@ -41,11 +41,10 @@ public class EnemyHealth : MonoBehaviour
     {
         RunDataManager.Instance.AddKill(playerTag);
 
-        //Hacer cosas antes de morir (soltar experiencia, ...)
         GameObject xpOrb = Instantiate(xpOrbPrefab);
         xpOrb.transform.position = this.transform.position;
 
-        //Destruir enemigo
+
         Destroy(this.gameObject);
     }
 
