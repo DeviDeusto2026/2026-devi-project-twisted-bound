@@ -12,21 +12,21 @@ public class FinishMenuManager : MonoBehaviour
     [SerializeField] RunData runData;
 
     [Header("Clock")]
-    [SerializeField] TextMeshPro clockText;
+    [SerializeField] TMP_Text clockText;
 
     [Header("Player 1 info")]
-    [SerializeField] TextMeshPro killsPlayer1Text;
-    [SerializeField] TextMeshPro deathsPlayer1Text;
-    [SerializeField] TextMeshPro RevivesPlayer1Text;
-    [SerializeField] TextMeshPro abilitiesPlayer1Text;
-    [SerializeField] TextMeshPro itemsPlayer1Text;
+    [SerializeField] TMP_Text killsPlayer1Text;
+    [SerializeField] TMP_Text deathsPlayer1Text;
+    [SerializeField] TMP_Text RevivesPlayer1Text;
+    [SerializeField] TMP_Text abilitiesPlayer1Text;
+    [SerializeField] TMP_Text itemsPlayer1Text;
 
     [Header("Player 2 info")]
-    [SerializeField] TextMeshPro killsPlayer2Text;
-    [SerializeField] TextMeshPro deathsPlayer2Text;
-    [SerializeField] TextMeshPro RevivesPlayer2Text;
-    [SerializeField] TextMeshPro abilitiesPlayer2Text;
-    [SerializeField] TextMeshPro itemsPlayer2Text;
+    [SerializeField] TMP_Text killsPlayer2Text;
+    [SerializeField] TMP_Text deathsPlayer2Text;
+    [SerializeField] TMP_Text RevivesPlayer2Text;
+    [SerializeField] TMP_Text abilitiesPlayer2Text;
+    [SerializeField] TMP_Text itemsPlayer2Text;
 
     public void MainMenu()
     {
