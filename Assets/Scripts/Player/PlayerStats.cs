@@ -21,7 +21,11 @@ public class PlayerStats : MonoBehaviour
     private float enemyTimer = 0.5f;
 
     Dictionary<EnemyAttack, float> enemyDict = new Dictionary<EnemyAttack, float>();
-    
+
+    [SerializeField] AudioSource audioSourceDamage;
+    [SerializeField] AudioSource audioSourceDeath;
+    [SerializeField] AudioSource audioSourceRevive;
+
 
     private void Awake()
     { 
@@ -151,10 +155,13 @@ public class PlayerStats : MonoBehaviour
 
         this.healthActual -= trueDamage;
 
+        audioSourceDamage.Play();
+
         if (healthActual <= 0 && !isDead) Die();
     }
     public void Die()
     {
+        audioSourceDeath.Play();
         RunDataManager.Instance.AddDeath(this.gameObject.tag);
         isDead = true;
         GameObject sphere = Instantiate(reviveSphere, this.transform);
@@ -163,6 +170,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Revive()
     {
+        audioSourceRevive.Play();
         RunDataManager.Instance.AddRevive(this.gameObject.tag);
         isDead = false;
         this.healthActual = GetHealthMax() / 2;
