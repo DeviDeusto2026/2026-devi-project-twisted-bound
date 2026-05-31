@@ -689,8 +689,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179751995097374864, guid: dcdc561e880420e45b7f04229f470538, type: 3}
+      propertyPath: angle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179751995097374864, guid: dcdc561e880420e45b7f04229f470538, type: 3}
+      propertyPath: offset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179751995097374864, guid: dcdc561e880420e45b7f04229f470538, type: 3}
       propertyPath: playerTag
       value: Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630529659081741032, guid: dcdc561e880420e45b7f04229f470538, type: 3}
+      propertyPath: angle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630529659081741032, guid: dcdc561e880420e45b7f04229f470538, type: 3}
+      propertyPath: offset
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8630529659081741032, guid: dcdc561e880420e45b7f04229f470538, type: 3}
       propertyPath: playerTag
