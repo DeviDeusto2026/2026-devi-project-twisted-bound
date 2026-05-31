@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4b02e0820c80f4289d211e136167af, type: 3}
+  m_Name: RunData
+  m_EditorClassIdentifier: Assembly-CSharp::RunData
+  deathCountPlayer1: 0
+  deathCountPlayer2: 0
+  reviveCountPlayer1: 0
+  reviveCountPlayer2: 0
+  killCountPlayer1: 0
+  killCountPlayer2: 0
+  abilityListPlayer1: []
+  abilityListPlayer2: []
+  itemListPlayer1: []
+  itemListPlayer2: []
+  clock: 0

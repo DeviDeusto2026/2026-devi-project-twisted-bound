@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunDataManager
   finishScene: FinishScene
-  runData: {fileID: 0}
+  runData: {fileID: 11400000, guid: 39fad0d257c59ea449a35276744de4d3, type: 2}
   tagPlayer1: Warrior
   tagPlayer2: Wizard
 --- !u!4 &1541451455
