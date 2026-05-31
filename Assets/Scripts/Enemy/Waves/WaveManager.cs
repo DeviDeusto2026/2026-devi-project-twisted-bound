@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using TMPro;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -11,10 +14,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float enemyAttackMultiplier; //5
     [SerializeField] private float enemyHealthMultiplier; //2
     [SerializeField] private float enemyVelocityMultiplier; //0.2
-    
 
+    [Header("Game clock")]
+    [SerializeField] private TMP_Text clockText;
     private float clock = 0;
-
 
     [Header("Waves")]
     [SerializeField] private float timeBetweenWaves; //Este sera fijo
@@ -68,6 +71,7 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         clock += Time.deltaTime;
+        UpdateClockText();
         timeToNextWave -= Time.deltaTime;
         timeToSpawnChange -= Time.deltaTime;
 
@@ -89,6 +93,15 @@ public class WaveManager : MonoBehaviour
     public float GetClock()
     {
         return this.clock;
+    }
+
+    public void UpdateClockText()
+    {
+        int minute = (int) clock / 60;
+        string minuteStr = (minute < 10) ? "0" + minute : "" + minute;
+        int seconds = (int) clock % 60;
+        string secondsStr = (seconds < 10) ? "0" + seconds : "" + seconds;
+        clockText.text = minuteStr + ":" + secondsStr;
     }
 
     private void ChangePossibleSpawns()

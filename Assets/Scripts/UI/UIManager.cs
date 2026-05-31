@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject xpBarPanel;
     [SerializeField] private GameObject levelUpPanel;
     [SerializeField] private GameObject choosePlayerPanel;
+    [SerializeField] private GameObject hudPanel;
 
     [Header("Event System")]
     [SerializeField] private GameObject eventSystem;
@@ -31,13 +32,16 @@ public class UIManager : MonoBehaviour
         separationLine.SetActive(true);
         levelUpPanel.SetActive(true);
         XpBarSetActive(false);
+        hudPanel.SetActive(false);
     }
 
 
     public void CloseLevelUp()
     {
+        separationLine.SetActive(true);
         levelUpPanel.SetActive(false);
         XpBarSetActive(true);
+        hudPanel.SetActive(false);
     }
 
 
@@ -47,6 +51,7 @@ public class UIManager : MonoBehaviour
         xpBarPanel.SetActive(false);
         levelUpPanel.SetActive(false);
         choosePlayerPanel.SetActive(true);
+        hudPanel.SetActive(false);
 
         eventSystem.SetActive(true);
     }
@@ -56,6 +61,7 @@ public class UIManager : MonoBehaviour
         choosePlayerPanel.SetActive(false);
         xpBarPanel.SetActive(true);
         separationLine.SetActive(true);
+        hudPanel.SetActive(true);
 
         eventSystem.SetActive(false);
     }

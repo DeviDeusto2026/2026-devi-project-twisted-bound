@@ -5,22 +5,37 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     private float healthMax = 100;
-    private float healthActual = 100;
+    
+    /// <summary>
+    /// Este no debe ser usado directamente
+    /// </summary>
+    private float _healthActual;
+    private float healthActual
+    {
+        get => _healthActual;
+        set
+        {
+            _healthActual = value > 0? value : 0;
+            healthBar.Set(GetHealthMax(), _healthActual);
+        }
+    }
     private float velocity = 7;
     private float healthRegeneration = 0.1f;
     private float pickupAreaSize = 10;
     public bool isDead = false;
 
-    [SerializeField] float healthRegenTimerMax = 5;
+    [SerializeField] float healthRegenTimerMax = 1;
     float healthRegenTimer;
     [SerializeField] GameObject reviveSphere;
 
     private ItemManager itemManager;
     private EffectManager effectManager;
 
-    private float enemyTimer = 0.5f;
+    private const float enemyTimer = 0.5f;
 
     Dictionary<EnemyAttack, float> enemyDict = new Dictionary<EnemyAttack, float>();
+
+    private HealthBar healthBar;
     
 
     private void Awake()
@@ -28,24 +43,42 @@ public class PlayerStats : MonoBehaviour
         effectManager = this.gameObject.GetComponent<EffectManager>();
         itemManager = this.gameObject.GetComponentInChildren<ItemManager>();
         healthRegenTimer = healthRegenTimerMax;
+        
+    }
+
+    public void OnGameStart()
+    {
+        HealthBar[] healthBars = FindObjectsByType<HealthBar>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (HealthBar hb in healthBars)
+        {
+            if (this.CompareTag(hb.OwnerTag))
+            {
+                healthBar = hb;
+                break;
+            }
+        }
+        healthActual = healthMax;
     }
 
     private void Update()
     {
         RegenHealth();
+        CheckEnemyAttack();
     }
 
     void RegenHealth()
     {
-        if (enemyDict.Keys.ToArray<EnemyAttack>().Length == 0) return;
+        if (enemyDict.Count != 0) return;
 
         healthRegenTimer -= Time.deltaTime;
         if (healthRegenTimer > 0) return;
 
         healthRegenTimer = healthRegenTimerMax;
-        if (GetHealthActual() + GetHealthRegeneration() < GetHealthMax())
+        
+        healthActual += GetHealthRegeneration();
+        if (healthActual > GetHealthMax())
         {
-            healthActual += GetHealthRegeneration();
+            healthActual = GetHealthMax();
         }
 
     }
@@ -119,27 +152,26 @@ public class PlayerStats : MonoBehaviour
             SufferDamage(enemyAttack.GetAttack());
         }
 
-        CheckEnemyAttack();
     }
 
     void CheckEnemyAttack()
     {
         List<EnemyAttack> enemyAttackList = new List<EnemyAttack>(enemyDict.Keys);
 
-        foreach (EnemyAttack EnemyAttack in enemyAttackList)
+        foreach (EnemyAttack enemyAttack in enemyAttackList)
         {
             float newTimer;
 
-            enemyDict.TryGetValue(EnemyAttack, out newTimer);
+            enemyDict.TryGetValue(enemyAttack, out newTimer);
             newTimer -= Time.deltaTime;
 
             if (newTimer <= 0)
             { 
-                enemyDict.Remove(EnemyAttack);
+                enemyDict.Remove(enemyAttack);
                 continue;
             }
 
-            enemyDict[EnemyAttack] = newTimer;
+            enemyDict[enemyAttack] = newTimer;
         }
     }
 

@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   isDead: 0
-  healthRegenTimerMax: 5
+  healthRegenTimerMax: 1
   reviveSphere: {fileID: 1398543653470995729, guid: 7379ef2f28feba24a81eca30611b4909, type: 3}
 --- !u!114 &3914714998428173017
 MonoBehaviour:
