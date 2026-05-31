@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 6
   level: 0
   power: 0.1
+  imagePath: MetamagicRodEnlarge
+  description: Increases area of effect

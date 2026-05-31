@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 8
   level: 0
   power: 0.1
+  imagePath: MetamagicRodQuicken
+  description: Decreases cooldown

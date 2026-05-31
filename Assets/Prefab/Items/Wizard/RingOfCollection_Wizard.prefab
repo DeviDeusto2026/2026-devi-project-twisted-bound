@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 5
   level: 0
   power: 0.15
+  imagePath: RingOfCollection
+  description: Increases area of collection

@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 9
   level: 0
   power: 0.5
+  imagePath: Manyshot
+  description: Increases number of proyectiles

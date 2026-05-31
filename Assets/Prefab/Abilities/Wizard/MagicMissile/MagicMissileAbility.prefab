@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c785fe15bcb9bd4abee2b59ad73ecf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicMissileAbility
-  abilityName: 
+  abilityName: Magic Missile
   level: 0
   cooldown: 5
-  imagePath: 
-  description: 
+  imagePath: MagicMissile
+  description: Launches a magic missile as a projectile
   projectile: {fileID: 3521572451672629132, guid: 43086247a345e2348a8cb07941edfb91, type: 3}
   damage:
   - 10

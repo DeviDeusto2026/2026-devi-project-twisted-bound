@@ -67,7 +67,9 @@ public abstract class Ability : MonoBehaviour, IReward
 
     public string GetImagePath()
     {
-        return this.imagePath;
+        string path = "/AbilityImages/";
+        path += imagePath;
+        return path;
     }
     public string GetDescription()
     {

@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54e4e53565404e4b9c8bf8bd35ab071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GreatswordAbility
-  abilityName: 
+  abilityName: Greatsword
   level: 0
   cooldown: 5
-  imagePath: 
-  description: 
+  imagePath: Greatsword
+  description: Swings a sword forward
   damage:
   - 10
   - 10

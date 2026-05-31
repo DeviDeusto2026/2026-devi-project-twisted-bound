@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 2
   level: 0
   power: 0.1
+  imagePath: BootsOfSpeed
+  description: Increases speed

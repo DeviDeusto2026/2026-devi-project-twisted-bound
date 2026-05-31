@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf37451b0bc99e44adde6ab17fa41b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FuryAbility
-  abilityName: 
+  abilityName: Fury
   level: 0
   cooldown: 20
-  imagePath: 
-  description: 
+  imagePath: Fury
+  description: Increases damage, speed, health regen and damage suffered intermittently
   attack:
   - 0.2
   - 0.2

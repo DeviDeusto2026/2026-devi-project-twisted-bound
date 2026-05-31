@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9d09fe55a419e4b8da35f082afb3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragonClawsAbility
+  abilityName: Dragon Claws
   level: 1
   cooldown: 5
+  imagePath: DragonClaws
+  description: Swings a sword forward
   damage:
   - 5
   - 5

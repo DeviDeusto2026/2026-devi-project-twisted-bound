@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 0
   level: 0
   power: 20
+  imagePath: BeltOfStoneskin
+  description: Increases health

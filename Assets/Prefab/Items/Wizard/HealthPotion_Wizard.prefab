@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 4
   level: 0
   power: 0.5
+  imagePath: HealthPotion
+  description: Increases health regen

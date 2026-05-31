@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 7
   level: 0
   power: 0.1
+  imagePath: ExtendedCombatMeditation
+  description: Increases effect duration

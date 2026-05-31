@@ -48,3 +48,5 @@ MonoBehaviour:
   stat: 3
   level: 0
   power: 5
+  imagePath: RingOfProtection
+  description: Increases resistance
