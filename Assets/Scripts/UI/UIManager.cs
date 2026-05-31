@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -29,12 +30,14 @@ public class UIManager : MonoBehaviour
     {
         separationLine.SetActive(true);
         levelUpPanel.SetActive(true);
+        XpBarSetActive(false);
     }
 
 
     public void CloseLevelUp()
     {
         levelUpPanel.SetActive(false);
+        XpBarSetActive(true);
     }
 
 
@@ -57,4 +60,25 @@ public class UIManager : MonoBehaviour
         eventSystem.SetActive(false);
     }
 
+
+
+
+
+
+
+
+
+
+
+    private void XpBarSetActive(bool value)
+    {
+        Slider xpBar = xpBarPanel.GetComponentInChildren<Slider>(true);
+
+        Transform[] transforms = xpBar.GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in transforms)
+        {
+            if (xpBar.transform.Equals(t)) continue;
+            t.gameObject.SetActive(value);
+        }
+    }
 }
