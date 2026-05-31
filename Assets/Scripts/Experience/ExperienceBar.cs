@@ -57,6 +57,7 @@ public class ExperienceBar : MonoBehaviour
         if (Mathf.Floor(newLevel) < level) return;
         
         StartCoroutine(LevelUp());
+        Debug.Log($"Chavales he vuelto");
     }
 
     private IEnumerator LevelUp()
@@ -70,9 +71,20 @@ public class ExperienceBar : MonoBehaviour
         player1.PrepareNewRewards();
         player2.PrepareNewRewards();
         UIManager.Instance.OpenLevelUp();
+        Transform[] gos = this.gameObject.GetComponentsInChildren<Transform>(true);
+        foreach (Transform go in gos)
+        {
+            if (transform.GetInstanceID() == go.GetInstanceID()) continue;
+            go.gameObject.SetActive(false);
+        }
 
-        yield return new WaitUntil(() => player1.RewardChoosen && player2.RewardChoosen);
+        yield return new WaitUntil(() => player1.RewardChoosen);
+        yield return new WaitUntil(() => player2.RewardChoosen);
 
+        foreach (Transform go in gos)
+        {
+            go.gameObject.SetActive(true);
+        }
         //Reanudar el juego
         UIManager.Instance.CloseLevelUp();
 

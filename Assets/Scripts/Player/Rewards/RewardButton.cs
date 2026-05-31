@@ -14,13 +14,10 @@ public class RewardButton : MonoBehaviour
     [SerializeField, Tooltip("The color for the button when it's chosen as the reward")] private Color chosenColor;
     [SerializeField, Tooltip("The color for the button when it's NOT chosen as the reward")] private Color notChosenColor;
 
-    private Button button;
+    [Header("Button")]
+    [SerializeField] private Button button;
 
-    private void Awake()
-    {
-        button = this.GetComponent<Button>();
-    }
-
+    
 
     public void SetLevel(int actualLevel)
     {
