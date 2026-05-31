@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,13 @@ public class ExperienceBar : MonoBehaviour
     private static readonly float constC = Mathf.Exp((1 - constB) / constA);
 
     [Header("Player")]
-    [SerializeField] private PlayerLevelUpRewards player1;
-    [SerializeField] private PlayerLevelUpRewards player2;
+    private PlayerLevelUpRewards player1;
+    private PlayerLevelUpRewards player2;
     [SerializeField] string tagPlayer1;
     [SerializeField] string tagPlayer2;
+    
     private Slider slider;
+    private TMP_Text levelText;
 
     public void OnGameStart()
     {
@@ -27,6 +30,8 @@ public class ExperienceBar : MonoBehaviour
     private void Start()
     {
         slider = this.gameObject.GetComponent<Slider>();
+        levelText = this.GetComponentInChildren<TMP_Text>(true);
+        levelText.text = "Lv. " + level;
     }
 
 
@@ -52,7 +57,8 @@ public class ExperienceBar : MonoBehaviour
         slider.value = newLevel - (int)newLevel;
 
         if (Mathf.Floor(newLevel) <= level) return;
-        
+
+        levelText.text = "Lv. " + level;
         StartCoroutine(LevelUp());
     }
 
@@ -67,20 +73,20 @@ public class ExperienceBar : MonoBehaviour
         player1.PrepareNewRewards();
         player2.PrepareNewRewards();
         UIManager.Instance.OpenLevelUp();
-        Transform[] gos = this.gameObject.GetComponentsInChildren<Transform>(true);
-        foreach (Transform go in gos)
-        {
-            if (transform.GetInstanceID() == go.GetInstanceID()) continue;
-            go.gameObject.SetActive(false);
-        }
+        //Transform[] gos = this.gameObject.GetComponentsInChildren<Transform>(true);
+        //foreach (Transform go in gos)
+        //{
+        //    if (transform.GetInstanceID() == go.GetInstanceID()) continue;
+        //    go.gameObject.SetActive(false);
+        //}
 
         yield return new WaitUntil(() => player1.RewardChoosen);
         yield return new WaitUntil(() => player2.RewardChoosen);
 
-        foreach (Transform go in gos)
-        {
-            go.gameObject.SetActive(true);
-        }
+        //foreach (Transform go in gos)
+        //{
+        //    go.gameObject.SetActive(true);
+        //}
         //Reanudar el juego
         UIManager.Instance.CloseLevelUp();
 

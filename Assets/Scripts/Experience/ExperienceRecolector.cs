@@ -31,7 +31,7 @@ public class ExperienceRecolector : MonoBehaviour
 
 
         experienceBar.AddExperience(experienceOrb.GetExperience());
-        Destroy(other.gameObject);
+        Destroy(other.gameObject, 1); //Hay que meterle sonidito y si me animo un animacion de recoleccion
     }
 
 }
