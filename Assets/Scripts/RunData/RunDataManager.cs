@@ -31,11 +31,11 @@ public class RunDataManager : MonoBehaviour
         runData.deathCountPlayer1 = 0;
         runData.deathCountPlayer2 = 0;
 
-        runData.abilityListPlayer1 = null;
-        runData.abilityListPlayer2 = null;
+        runData.abilityListPlayer1 = new List<AbilityData>();
+        runData.abilityListPlayer2 = new List<AbilityData>();
 
-        runData.itemListPlayer1 = null;
-        runData.itemListPlayer2 = null;
+        runData.itemListPlayer1 = new List<AbilityData>();
+        runData.itemListPlayer2 = new List<AbilityData>();
 
         runData.clock = 0;
 }
@@ -114,11 +114,20 @@ public class RunDataManager : MonoBehaviour
     {
         if (tag == tagPlayer1)
         {
-            runData.abilityListPlayer1 = abilityList;
+            foreach(Ability ability in abilityList)
+            {
+                AbilityData abilityData = new AbilityData(ability.GetName(), ability.GetLevel());
+                runData.abilityListPlayer1.Add(abilityData);
+            }
+            
         }
         else if (tag == tagPlayer2)
         {
-            runData.abilityListPlayer2 = abilityList;
+            foreach (Ability ability in abilityList)
+            {
+                AbilityData abilityData = new AbilityData(ability.GetName(), ability.GetLevel());
+                runData.abilityListPlayer2.Add(abilityData);
+            }
         }
         else
         {
@@ -130,11 +139,19 @@ public class RunDataManager : MonoBehaviour
     {
         if (tag == tagPlayer1)
         {
-            runData.itemListPlayer1 = itemList;
+            foreach (Item item in itemList)
+            {
+                AbilityData abilityData = new AbilityData(item.GetName(), item.GetLevel());
+                runData.itemListPlayer1.Add(abilityData);
+            }
         }
         else if (tag == tagPlayer2)
         {
-            runData.itemListPlayer2 = itemList;
+            foreach (Item item in itemList)
+            {
+                AbilityData abilityData = new AbilityData(item.GetName(), item.GetLevel());
+                runData.itemListPlayer2.Add(abilityData);
+            }
         }
         else
         {
