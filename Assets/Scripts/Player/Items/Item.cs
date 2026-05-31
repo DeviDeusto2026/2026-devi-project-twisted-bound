@@ -41,7 +41,7 @@ public class Item : MonoBehaviour, IReward
 
     public string GetImagePath()
     {
-        string path = "/ItemImages/";
+        string path = "ItemImages/";
         path += imagePath;
         return path;
     }

@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenLevelUp()
     {
-        separationLine.SetActive(true);
+        separationLine.SetActive(false);
         levelUpPanel.SetActive(true);
         XpBarSetActive(false);
         hudPanel.SetActive(false);

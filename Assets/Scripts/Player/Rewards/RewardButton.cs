@@ -32,7 +32,8 @@ public class RewardButton : MonoBehaviour
 
     public void SetImage(string imagePath)
     {
-        rewardImage.sprite = Resources.Load<Sprite>(imagePath);
+        Sprite sprite = Resources.Load<Sprite>(imagePath);        
+        rewardImage.sprite = sprite;
     }
 
     public void SetDescription(string desc)
